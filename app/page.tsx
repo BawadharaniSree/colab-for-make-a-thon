@@ -10,7 +10,10 @@ import SocialFeedSection from "@/components/social-feed-section"
 import SponsorsSection from "@/components/sponsors-section"
 import FooterSection from "@/components/footer-section"
 import ThemeSection from "@/components/theme-section"
+import TimelineSection from "@/components/timeline-section"
 import Navbar from "@/components/navbar"
+import FAQSection from "@/components/faq-section"
+import AchievementsSection from "@/components/achievements-section"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export default function Home() {
@@ -26,11 +29,14 @@ export default function Home() {
         <Navbar />
         <HeroSection />
         <AboutSection scrollYProgress={scrollYProgress} />
+        <TimelineSection />
         <ThemeSection />
         <ScheduleSection />
         <MentorsSection />
         <SocialFeedSection />
         <SponsorsSection />
+        <AchievementsSection />
+        <FAQSection />
         <FooterSection />
       </div>
     </ThemeProvider>

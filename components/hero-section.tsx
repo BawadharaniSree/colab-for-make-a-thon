@@ -1,14 +1,12 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Canvas, useFrame } from "@react-three/fiber"
+import { Canvas } from "@react-three/fiber"
 import {
   Environment,
   OrbitControls,
   Float,
-  useAnimations,
-  useGLTF,
   MeshDistortMaterial,
   MeshWobbleMaterial,
   Sphere,
@@ -17,189 +15,6 @@ import {
 } from "@react-three/drei"
 import { Button } from "@/components/ui/button"
 import { ChevronDown } from "lucide-react"
-
-// Robot character that works on a holographic interface
-function RobotWorker(props) {
-  const group = useRef()
-  const { scene, animations } = useGLTF("/assets/3d/duck.glb")
-  const { actions } = useAnimations(animations, group)
-
-  // Create a simple robot since we're using the duck as a placeholder
-  const robotRef = useRef()
-
-  useFrame(({ clock }) => {
-    if (robotRef.current) {
-      // Simulate robot working movements
-      robotRef.current.rotation.y = Math.sin(clock.getElapsedTime() * 0.5) * 0.2
-      robotRef.current.position.y = Math.sin(clock.getElapsedTime() * 2) * 0.1 + 0.1
-    }
-  })
-
-  return (
-    <group ref={group} {...props} dispose={null}>
-      {/* Robot body - created from primitive shapes */}
-      <group ref={robotRef} position={[0, 0, 0]} scale={0.5}>
-        {/* Robot head */}
-        <mesh position={[0, 1.5, 0]}>
-          <boxGeometry args={[0.8, 0.8, 0.8]} />
-          <meshStandardMaterial color="#333333" metalness={0.8} roughness={0.2} />
-
-          {/* Robot eyes */}
-          <mesh position={[0.2, 0.1, 0.41]}>
-            <sphereGeometry args={[0.1, 16, 16]} />
-            <meshStandardMaterial color="#00ffff" emissive="#00ffff" emissiveIntensity={2} />
-          </mesh>
-          <mesh position={[-0.2, 0.1, 0.41]}>
-            <sphereGeometry args={[0.1, 16, 16]} />
-            <meshStandardMaterial color="#00ffff" emissive="#00ffff" emissiveIntensity={2} />
-          </mesh>
-
-          {/* Robot antenna */}
-          <mesh position={[0, 0.5, 0]}>
-            <cylinderGeometry args={[0.05, 0.05, 0.3, 8]} />
-            <meshStandardMaterial color="#666666" metalness={0.8} roughness={0.2} />
-            <mesh position={[0, 0.2, 0]}>
-              <sphereGeometry args={[0.08, 16, 16]} />
-              <meshStandardMaterial color="#ff00ff" emissive="#ff00ff" emissiveIntensity={1} />
-            </mesh>
-          </mesh>
-        </mesh>
-
-        {/* Robot body */}
-        <mesh position={[0, 0.6, 0]}>
-          <boxGeometry args={[1, 1.2, 0.6]} />
-          <meshStandardMaterial color="#444444" metalness={0.8} roughness={0.3} />
-
-          {/* Robot chest light */}
-          <mesh position={[0, 0.2, 0.31]}>
-            <circleGeometry args={[0.2, 16]} />
-            <MeshWobbleMaterial color="#00ffff" emissive="#00ffff" emissiveIntensity={1} factor={0.2} speed={2} />
-          </mesh>
-        </mesh>
-
-        {/* Robot arms */}
-        {/* Left arm */}
-        <group position={[-0.6, 0.7, 0]}>
-          <mesh position={[-0.15, 0, 0]}>
-            <cylinderGeometry args={[0.1, 0.1, 0.8, 8]} rotation={[0, 0, Math.PI / 2]} />
-            <meshStandardMaterial color="#555555" metalness={0.8} roughness={0.2} />
-          </mesh>
-          <mesh position={[-0.5, 0, 0]}>
-            <boxGeometry args={[0.3, 0.15, 0.15]} />
-            <meshStandardMaterial color="#333333" metalness={0.8} roughness={0.2} />
-          </mesh>
-        </group>
-
-        {/* Right arm - animated to work on holographic interface */}
-        <group position={[0.6, 0.7, 0]}>
-          <motion.mesh
-            position={[0.15, 0, 0]}
-            rotation={[0, 0, Math.PI / 2]}
-            animate={{
-              rotateZ: [Math.PI / 2, Math.PI / 2 + 0.3, Math.PI / 2],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
-          >
-            <cylinderGeometry args={[0.1, 0.1, 0.8, 8]} />
-            <meshStandardMaterial color="#555555" metalness={0.8} roughness={0.2} />
-          </motion.mesh>
-          <motion.mesh
-            position={[0.5, 0, 0]}
-            animate={{
-              positionY: [0, 0.2, 0],
-              positionZ: [0, 0.2, 0],
-            }}
-            transition={{
-              duration: 1,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
-          >
-            <boxGeometry args={[0.3, 0.15, 0.15]} />
-            <meshStandardMaterial color="#333333" metalness={0.8} roughness={0.2} />
-          </motion.mesh>
-        </group>
-
-        {/* Robot legs */}
-        <mesh position={[-0.25, -0.3, 0]}>
-          <boxGeometry args={[0.25, 0.8, 0.3]} />
-          <meshStandardMaterial color="#333333" metalness={0.8} roughness={0.2} />
-        </mesh>
-        <mesh position={[0.25, -0.3, 0]}>
-          <boxGeometry args={[0.25, 0.8, 0.3]} />
-          <meshStandardMaterial color="#333333" metalness={0.8} roughness={0.2} />
-        </mesh>
-      </group>
-
-      {/* Holographic workstation the robot is interacting with */}
-      <group position={[1.5, 0.8, 0]}>
-        {/* Base platform */}
-        <mesh position={[0, -0.1, 0]}>
-          <cylinderGeometry args={[0.5, 0.6, 0.1, 16]} />
-          <meshStandardMaterial color="#222222" metalness={0.9} roughness={0.2} />
-        </mesh>
-
-        {/* Holographic projection */}
-        <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-          <Sphere args={[0.4, 16, 16]} position={[0, 0.5, 0]}>
-            <MeshDistortMaterial color="#00ffff" attach="material" distort={0.3} speed={2} transparent opacity={0.6} />
-          </Sphere>
-
-          {/* Data elements floating around the hologram */}
-          {Array.from({ length: 5 }).map((_, i) => (
-            <group key={i} rotation={[0, ((Math.PI * 2) / 5) * i, 0]}>
-              <Float
-                speed={3}
-                rotationIntensity={2}
-                floatIntensity={1}
-                position={[
-                  Math.sin(((Math.PI * 2) / 5) * i) * 0.8,
-                  0.5 + Math.cos(i * 0.5) * 0.3,
-                  Math.cos(((Math.PI * 2) / 5) * i) * 0.8,
-                ]}
-              >
-                <Box args={[0.1, 0.1, 0.1]}>
-                  <MeshWobbleMaterial
-                    color={i % 2 === 0 ? "#ff00ff" : "#00ffff"}
-                    factor={0.4}
-                    speed={2}
-                    transparent
-                    opacity={0.7}
-                  />
-                </Box>
-              </Float>
-            </group>
-          ))}
-        </Float>
-
-        {/* Holographic data streams */}
-        {Array.from({ length: 8 }).map((_, i) => (
-          <motion.mesh
-            key={`stream-${i}`}
-            position={[Math.sin(((Math.PI * 2) / 8) * i) * 0.3, 0.5, Math.cos(((Math.PI * 2) / 8) * i) * 0.3]}
-            animate={{
-              scaleY: [0.5, 1.5, 0.5],
-              opacity: [0.3, 0.7, 0.3],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-              delay: i * 0.2,
-            }}
-          >
-            <boxGeometry args={[0.02, 0.5, 0.02]} />
-            <meshStandardMaterial color="#00ffff" emissive="#00ffff" emissiveIntensity={2} transparent opacity={0.5} />
-          </motion.mesh>
-        ))}
-      </group>
-    </group>
-  )
-}
 
 // Digital Grid Floor
 function DigitalGrid() {
@@ -210,6 +25,85 @@ function DigitalGrid() {
         <meshStandardMaterial color="#000000" wireframe emissive="#00ffff" emissiveIntensity={0.2} />
       </mesh>
     </group>
+  )
+}
+
+// Enhanced 3D scene with floating elements
+function EnhancedScene() {
+  // Create floating holographic elements
+  return (
+    <>
+      <ambientLight intensity={0.2} />
+      <pointLight position={[10, 10, 10]} intensity={1} color="#00ffff" />
+      <pointLight position={[-10, -10, -10]} intensity={1} color="#ff00ff" />
+
+      {/* Digital grid floor */}
+      <DigitalGrid />
+
+      {/* Floating holographic elements */}
+      {Array.from({ length: 8 }).map((_, i) => (
+        <Float
+          key={i}
+          speed={2}
+          rotationIntensity={0.5}
+          floatIntensity={0.5}
+          position={[Math.sin((i / 8) * Math.PI * 2) * 5, Math.random() * 2 - 1, Math.cos((i / 8) * Math.PI * 2) * 5]}
+        >
+          <Sphere args={[0.5 + Math.random() * 0.5, 16, 16]}>
+            <MeshDistortMaterial
+              color={i % 2 === 0 ? "#00ffff" : "#ff00ff"}
+              attach="material"
+              distort={0.3}
+              speed={2}
+              transparent
+              opacity={0.6}
+            />
+          </Sphere>
+        </Float>
+      ))}
+
+      {/* Floating data cubes */}
+      {Array.from({ length: 12 }).map((_, i) => (
+        <Float
+          key={`cube-${i}`}
+          speed={3}
+          rotationIntensity={2}
+          floatIntensity={1}
+          position={[Math.sin((i / 12) * Math.PI * 2) * 8, Math.random() * 4 - 2, Math.cos((i / 12) * Math.PI * 2) * 8]}
+        >
+          <Box args={[0.3, 0.3, 0.3]}>
+            <MeshWobbleMaterial
+              color={i % 2 === 0 ? "#ff00ff" : "#00ffff"}
+              factor={0.4}
+              speed={2}
+              transparent
+              opacity={0.7}
+            />
+          </Box>
+        </Float>
+      ))}
+
+      {/* Central holographic sphere */}
+      <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.2}>
+        <Sphere args={[2, 32, 32]} position={[0, 1, 0]}>
+          <MeshDistortMaterial color="#00ffff" attach="material" distort={0.4} speed={1.5} transparent opacity={0.2} />
+        </Sphere>
+      </Float>
+
+      {/* Background stars */}
+      <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+
+      {/* Environment and controls */}
+      <Environment preset="night" />
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        autoRotate
+        autoRotateSpeed={0.5}
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 3}
+      />
+    </>
   )
 }
 
@@ -265,40 +159,73 @@ function GlitchyText({ text, className = "" }) {
   )
 }
 
-// Countdown timer component
+// Enhanced countdown timer component
 function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
-    days: 10,
-    hours: 12,
-    minutes: 34,
-    seconds: 56,
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
   })
 
+  // Target date - March 15, 2025
+  const targetDate = new Date("2025-03-15T09:00:00").getTime()
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 }
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 }
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 }
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 }
-        }
-        return prev
-      })
-    }, 1000)
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime()
+      const difference = targetDate - now
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000),
+        })
+      } else {
+        // If we're past the target date
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+      }
+    }
+
+    // Calculate immediately
+    calculateTimeLeft()
+
+    // Update every second
+    const interval = setInterval(calculateTimeLeft, 1000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [targetDate])
 
   return (
-    <div className="grid grid-cols-4 gap-4 text-center">
+    <div className="grid grid-cols-4 gap-2 sm:gap-4 text-center max-w-md mx-auto">
       {Object.entries(timeLeft).map(([unit, value]) => (
         <div key={unit} className="flex flex-col">
-          <div className="text-4xl font-bold bg-black/80 backdrop-blur-sm p-3 rounded-lg border border-cyan-500/50 text-cyan-400 shadow-lg shadow-cyan-500/20">
-            {value.toString().padStart(2, "0")}
+          <div className="relative overflow-hidden">
+            {/* Animated background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 animate-pulse"></div>
+
+            {/* Timer value */}
+            <div className="relative text-2xl sm:text-4xl font-bold bg-black/70 backdrop-blur-sm p-2 sm:p-3 rounded-lg border border-cyan-500/50 text-cyan-400 shadow-lg shadow-cyan-500/20 flex items-center justify-center min-h-[60px] sm:min-h-[80px]">
+              {value.toString().padStart(2, "0")}
+
+              {/* Animated pulse effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 rounded-lg animate-pulse"></div>
+
+              {/* Animated border */}
+              <div className="absolute inset-0 rounded-lg border border-cyan-500/30 overflow-hidden">
+                <motion.div
+                  className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-500"
+                  animate={{ x: ["-100%", "100%"] }}
+                  transition={{
+                    repeat: Number.POSITIVE_INFINITY,
+                    duration: 2,
+                    ease: "linear",
+                  }}
+                />
+              </div>
+            </div>
           </div>
           <div className="text-xs uppercase mt-2 text-gray-300">{unit}</div>
         </div>
@@ -353,21 +280,7 @@ export default function HeroSection() {
       {/* 3D Scene */}
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 15], fov: 60 }}>
-          <ambientLight intensity={0.2} />
-          <pointLight position={[10, 10, 10]} intensity={1} color="#00ffff" />
-          <pointLight position={[-10, -10, -10]} intensity={1} color="#ff00ff" />
-          <RobotWorker position={[-2, -2, 0]} />
-          <DigitalGrid />
-          <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-          <Environment preset="night" />
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            autoRotate
-            autoRotateSpeed={0.5}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 3}
-          />
+          <EnhancedScene />
         </Canvas>
       </div>
 
@@ -379,7 +292,7 @@ export default function HeroSection() {
           transition={{ duration: 1, delay: 0.5 }}
           className="mb-6"
         >
-          <div className="bg-black/70 backdrop-blur-md p-6 rounded-lg border border-cyan-500/50 shadow-lg shadow-cyan-500/20 max-w-3xl mx-auto">
+          <div className="bg-black/50 backdrop-blur-sm p-6 rounded-lg border border-cyan-500/50 shadow-lg shadow-cyan-500/20 max-w-3xl mx-auto">
             <GlitchyText text=">> INITIALIZING MAKE-A-THON 6.0" className="text-xl md:text-2xl text-cyan-400 mb-2" />
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent drop-shadow-[0_2px_2px_rgba(0,255,255,0.5)]">
               MAKE-A-THON 6.0
