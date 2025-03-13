@@ -34,7 +34,10 @@ const ThemeSection = () => {
   ]
 
   return (
-    <section className="py-12">
+    <section 
+      id="theme"
+      className="py-12"
+      >
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
