@@ -4,8 +4,8 @@ import "./globals.css"
 import CustomCursor from "@/components/custom-cursor"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "Make a Thon 6.0"
+  description: "MAKE-A-THON is ECE SVCE's flagship hackathon, fostering innovation and collaboration in tech.",
   generator: "v0.dev",
 }
 
