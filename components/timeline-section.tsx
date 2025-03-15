@@ -18,7 +18,7 @@ export default function TimelineSection() {
 
   // Timeline events
   const timelineEvents = [
-{/*}    {
+{/*    {
       date: "March 16, 2025",
       title: "Website Release",
       description: "Explore event details and get ready for MAKE-A-THON 6.0!",
