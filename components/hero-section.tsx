@@ -134,7 +134,7 @@ function GlitchyText({ text, className = "" }) {
         const glitchInterval = setInterval(() => {
           setGlitching(true)
           setTimeout(() => setGlitching(false), 100)
-        }, 3000)
+        }, 900)
 
         return () => clearInterval(glitchInterval)
       }
@@ -169,7 +169,7 @@ function CountdownTimer() {
   })
 
   // Target date - March 15, 2025
-  const targetDate = new Date("2025-03-15T09:00:00").getTime()
+  const targetDate = new Date("2025-04-16T09:00:00").getTime()
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -319,25 +319,34 @@ export default function HeroSection() {
           className="flex flex-col md:flex-row gap-4 justify-center"
         >
           <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-none px-8 py-6 text-lg shadow-lg shadow-cyan-500/20">
+          <a href="#timeline" className="cursor-pointer">
             Learn More
+            </a>
           </Button>
           <Button
             variant="outline"
             className="border-cyan-500 text-cyan-400 hover:bg-cyan-950 px-8 py-6 text-lg shadow-lg shadow-cyan-500/20"
           >
+            <a href="#schedule" className="cursor-pointer">
             View Schedule
+            </a>
           </Button>
         </motion.div>
 
+        </div>
+
+<br></br><br></br>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
+          <a href="#about" className="cursor-pointer">
           <ChevronDown className="h-8 w-8 text-cyan-400" />
+         </a>
         </motion.div>
-      </div>
+      
 
       {/* Enhanced animated floating circuits */}
       <div className="absolute inset-0 pointer-events-none">

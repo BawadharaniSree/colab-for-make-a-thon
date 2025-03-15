@@ -13,9 +13,10 @@ const navItems = [
   { name: "About", href: "#about" },
   { name: "Theme", href: "#theme" },
   { name: "Schedule", href: "#schedule" },
-  { name: "Mentors", href: "#mentors" },
   { name: "Updates", href: "#updates" },
   { name: "Sponsors", href: "#sponsors" },
+  { name: "Achievements", href: "#achievements" },
+  { name: "FAQ", href: "#faq" },
 ]
 
 export default function Navbar() {
@@ -59,7 +60,7 @@ export default function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
-          <Link href="/problems">
+          <Link href="#theme">
             <Button className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-none">
               Problem Statements
             </Button>
