@@ -177,7 +177,7 @@ export default function ScheduleSection() {
         </motion.div>
 
         {/* 3D Floating Digital Clocks */}
-        <motion.div
+        {/*<motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -186,7 +186,7 @@ export default function ScheduleSection() {
         >
           <DigitalClock time="Day 1" />
           <DigitalClock time="Day 2" />
-        </motion.div>
+        </motion.div>*/}
 
         {/* Schedule Tabs */}
         <Tabs defaultValue="day1" value={activeDay} onValueChange={setActiveDay} className="w-full">
@@ -195,6 +195,7 @@ export default function ScheduleSection() {
               value="day1"
               className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-cyan-500/20 data-[state=active]:to-purple-500/20 data-[state=active]:text-white"
             >
+              
               <Calendar className="h-4 w-4 mr-2" />
               Day 1
             </TabsTrigger>
@@ -257,71 +258,7 @@ export default function ScheduleSection() {
           ))}
         </Tabs>
 
-        {/* Leaderboard */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <h3 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            Live Leaderboard
-          </h3>
-
-          <div className="relative overflow-hidden rounded-lg border border-cyan-500/20 bg-black/50 backdrop-blur-sm">
-            {/* Glitch effect overlay */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 mix-blend-overlay"></div>
-              <motion.div
-                animate={{
-                  y: [0, -100, 0],
-                  opacity: [0, 0.5, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "loop",
-                }}
-                className="absolute inset-0 w-full h-[200%] bg-[url('/placeholder.svg?height=100&width=1000')] bg-repeat opacity-10"
-              ></motion.div>
-            </div>
-
-            <div className="p-6 overflow-x-auto">
-              <div className="min-w-[600px]">
-                <div className="grid grid-cols-12 text-sm font-medium text-gray-400 border-b border-cyan-500/20 pb-3 mb-3">
-                  <div className="col-span-1">#</div>
-                  <div className="col-span-5">Team</div>
-                  <div className="col-span-3">Category</div>
-                  <div className="col-span-3 text-right">Score</div>
-                </div>
-
-                {[
-                  { rank: 1, team: "Cyber Wizards", category: "AI", score: 95 },
-                  { rank: 2, team: "Neon Hackers", category: "Blockchain", score: 92 },
-                  { rank: 3, team: "Digital Nomads", category: "IoT", score: 88 },
-                  { rank: 4, team: "Code Breakers", category: "Cybersecurity", score: 85 },
-                  { rank: 5, team: "Quantum Coders", category: "AI", score: 82 },
-                ].map((team, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className={`grid grid-cols-12 py-3 ${index !== 4 ? "border-b border-cyan-500/10" : ""} ${
-                      index === 0 ? "bg-gradient-to-r from-cyan-500/10 to-transparent" : ""
-                    }`}
-                  >
-                    <div className="col-span-1 font-mono text-cyan-400">{team.rank}</div>
-                    <div className="col-span-5 font-medium text-white">{team.team}</div>
-                    <div className="col-span-3 text-gray-400">{team.category}</div>
-                    <div className="col-span-3 text-right font-mono text-cyan-400">{team.score}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
+   
       </div>
     </section>
   )
