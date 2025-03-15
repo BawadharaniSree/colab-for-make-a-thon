@@ -112,11 +112,11 @@ export default function AboutSection({ scrollYProgress }) {
             Intelligence Club are all set to conduct the “Make-a-Thon 6.0” as an inter-collegiate event. This event 
             serves as an opportunity for the students to upskill themselves on recent technologies.
             </p><div className="flex flex-col items-center gap-4 md:gap-8 mt-4 md:mt-8">
-  {/* Top RAIC - Centered */}
+  {/* Top Make a Thon 6.0 - Centered */}
   <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
     <img 
-      src="/new RAIC logo.png" 
-      alt="RAIC" 
+      src="/new MAKEATHON LOGO.png" 
+      alt="Make a Thon 6.0" 
       className="h-full rounded-lg border-4 border-white"
     />
   </div>
