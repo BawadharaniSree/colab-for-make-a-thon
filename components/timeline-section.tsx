@@ -18,40 +18,48 @@ export default function TimelineSection() {
 
   // Timeline events
   const timelineEvents = [
-    {
-      date: "March 1, 2025",
-      title: "Registration Opens",
-      description: "Sign up your team and secure your spot for MAKE-A-THON 6.0",
+{/*}    {
+      date: "March 16, 2025",
+      title: "Website Release",
+      description: "Explore event details and get ready for MAKE-A-THON 6.0!",
       icon: <Calendar className="h-6 w-6 text-cyan-400" />,
     },
+*/}
     {
-      date: "March 10, 2025",
-      title: "Team Confirmation",
-      description: "Final team roster confirmation and pre-event briefing",
+      date: "March 17, 2025",
+      title: "Dates Release",
+      description: "Mark your calendars for MAKE-A-THON 6.0 event dates!",
       icon: <Users className="h-6 w-6 text-purple-400" />,
     },
     {
-      date: "March 15, 2025",
-      title: "Hackathon Kickoff",
-      description: "Opening ceremony, theme announcements, and coding begins",
+      date: "March 19, 2025",
+      title: "Problem Statement Release",
+      description: "Explore the challenges for MAKE-A-THON 6.0 and start shaping your innovative solutions!",
       icon: <Zap className="h-6 w-6 text-cyan-400" />,
     },
     {
-      date: "March 16, 2025",
-      title: "Mentorship Sessions",
-      description: "One-on-one sessions with industry experts and tech mentors",
+      date: "April 4, 2025",
+      title: "Registration Closes",
+      description: "Last chance to sign up and secure your spot for MAKE-A-THON 6.0!",
       icon: <MessageSquare className="h-6 w-6 text-purple-400" />,
     },
-    {
-      date: "March 17, 2025",
-      title: "Project Submission",
-      description: "Final code submission and preparation for presentations",
+{/*}    {
+      date: "April 6, 2025",
+      title: "Registration Extended & Final Closure",
+      description: "Due to high demand, registration has been extended! Don’t miss this final chance to be part of MAKE-A-THON 6.0.",
       icon: <Send className="h-6 w-6 text-cyan-400" />,
     },
+*/}
     {
-      date: "March 17, 2025",
-      title: "Demo Day & Awards",
-      description: "Project demonstrations, judging, and awards ceremony",
+      date: "April 9, 2025",
+      title: "Shortlisted Teams Announcement",
+      description: "The results are out! Check out the shortlisted teams for MAKE-A-THON 6.0. Congratulations to all the selected teams!",
+      icon: <Award className="h-6 w-6 text-purple-400" />,
+    },
+    {
+      date: "April 16, 2025",
+      title: "MAKE-A-THON 6.0 - Event Day",
+      description: "The wait is over! Witness innovation and creativity as teams bring their ideas to life at MAKE-A-THON 6.0. Let the hacking begin!",
       icon: <Award className="h-6 w-6 text-purple-400" />,
     },
   ]
@@ -186,4 +194,3 @@ export default function TimelineSection() {
     </section>
   )
 }
-
