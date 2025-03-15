@@ -32,7 +32,6 @@ export default function Home() {
         <TimelineSection />
         <ThemeSection />
         <ScheduleSection />
-        <MentorsSection />
         <SocialFeedSection />
         <SponsorsSection />
         <AchievementsSection />
