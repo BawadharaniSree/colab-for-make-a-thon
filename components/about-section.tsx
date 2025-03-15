@@ -111,18 +111,53 @@ export default function AboutSection({ scrollYProgress }) {
             The Institution of Electronics and Telecommunication Engineers Student Forum & Robotics and Artificial 
             Intelligence Club are all set to conduct the “Make-a-Thon 6.0” as an inter-collegiate event. This event 
             serves as an opportunity for the students to upskill themselves on recent technologies.
-            </p>
-            <div className="grid grid-cols-2 md:flex justify-center items-center gap-4 md:gap-8 mt-4 md:mt-8">
-              <div className="flex justify-end">
-                <img src="/new ECEA logo.png" alt="ECE Association" className="h-24 md:h-32 bg-white p-1 rounded-lg border-2 border-transparent bg-gradient-to-r from-cyan-400 to-purple-500" />
-              </div>
-              <div className="flex justify-start">
-                <img src="/new IETE logo.png" alt="IETE-SF" className="h-24 md:h-32 bg-white p-1 rounded-lg border-2 border-transparent bg-gradient-to-r from-cyan-400 to-purple-500" />
-              </div>
-              <div className="col-span-2 flex justify-center">
-                <img src="/new RAIC logo.png" alt="RAIC" className="h-24 md:h-32 bg-white p-1 rounded-lg border-2 border-transparent bg-gradient-to-r from-cyan-400 to-purple-500" />
-              </div>
-            </div>
+            </p><div className="flex flex-col items-center gap-4 md:gap-8 mt-4 md:mt-8">
+  {/* Top RAIC - Centered */}
+  <div className="h-24 md:h-32 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+    <img 
+      src="/new RAIC logo.png" 
+      alt="RAIC" 
+      className="h-full rounded-lg border-4 border-white"
+    />
+  </div>
+
+  {/* Bottom Row - ECEA, IETE, RAIC */}
+  <div className="grid grid-cols-2 md:flex justify-center items-center gap-4 md:gap-8">
+    {/* ECEA - Left */}
+    <div className="flex justify-end">
+      <div className="h-24 md:h-32 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+        <img 
+          src="/new ECEA logo.png" 
+          alt="ECE Association" 
+          className="h-full rounded-lg border-4 border-white"
+        />
+      </div>
+    </div>
+
+    {/* IETE - Center */}
+    <div className="flex justify-center">
+      <div className="h-24 md:h-32 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+        <img 
+          src="/new IETE logo.png" 
+          alt="IETE-SF" 
+          className="h-full rounded-lg border-4 border-white"
+        />
+      </div>
+    </div>
+
+    {/* Bottom RAIC - Right */}
+    <div className="flex justify-start">
+      <div className="h-24 md:h-32 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+        <img 
+          src="/new RAIC logo.png" 
+          alt="RAIC" 
+          className="h-full rounded-lg border-4 border-white"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
 
           </div>
         </motion.div>
@@ -151,8 +186,8 @@ export default function AboutSection({ scrollYProgress }) {
                 },
                 {
                   icon: <Bot className="h-8 w-8 text-purple-400" />,
-                  title: "AI & Robotics Focus",
-                  description: "Special tracks dedicated to artificial intelligence and robotic innovations.",
+                  title: "Hardware Innovations",
+                  description: "Explore groundbreaking developments in hardware design, embedded systems, and IoT solutions.",
                 },
               ].map((item, index) => (
                 <motion.div
@@ -251,8 +286,15 @@ export default function AboutSection({ scrollYProgress }) {
                       }}
                       className="absolute inset-0 flex items-center justify-center"
                     >
-                      <div className="w-32 h-32 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 rounded-lg backdrop-blur-md border border-white/20 shadow-lg shadow-cyan-500/30"></div>
+                     <div className="w-32 h-32 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 rounded-lg backdrop-blur-md border border-white/20 shadow-lg shadow-cyan-500/30 flex items-center justify-center">
+                      <img 
+                        src="/ic_chip.png" 
+                        alt="Holographic Element" 
+                        className="w-28 h-28 object-cover rounded-lg"
+                     />
+                     </div>
                     </motion.div>
+
 
                     {/* Enhanced orbiting elements */}
                     {[0, 1, 2, 3].map((i) => (
@@ -341,11 +383,13 @@ export default function AboutSection({ scrollYProgress }) {
                     }}
                     className="text-xs text-cyan-400 font-mono bg-black/80 p-3 rounded border border-cyan-500/30"
                   >
-                    &lt;div className="hackathon"&gt;
-                    <br />
-                    &nbsp;&nbsp;&#123;renderInnovation()&#125;
-                    <br />
-                    &lt;/div&gt;
+                     void setup() &#123;
+                     <br />
+                     &nbsp;&nbsp;Serial.begin(9600);
+                     <br />
+                     &nbsp;&nbsp;initializeHardware();
+                     <br />
+                     &#125;
                   </motion.div>
                 </motion.div>
 
@@ -373,11 +417,11 @@ export default function AboutSection({ scrollYProgress }) {
                     }}
                     className="text-xs text-purple-400 font-mono bg-black/80 p-3 rounded border border-purple-500/30"
                   >
-                    function createFuture() &#123;
-                    <br />
-                    &nbsp;&nbsp;return innovation.build();
-                    <br />
-                    &#125;
+                        void loop() &#123;
+                        <br />
+                        &nbsp;&nbsp;monitorHardware();
+                        <br />
+                        &nbsp;&#125;
                   </motion.div>
                 </motion.div>
 
@@ -421,10 +465,10 @@ export default function AboutSection({ scrollYProgress }) {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20"
         >
           {[
-            { value: "500+", label: "Hackers", icon: <Code /> },
-            { value: "48", label: "Hours", icon: <Zap /> },
-            { value: "50+", label: "Mentors", icon: <Braces /> },
-            { value: "$50K", label: "in Prizes", icon: <Layers /> },
+            { value: "160+", label: "Participants", icon: <Code /> },
+            { value: "24", label: "Hours", icon: <Zap /> },
+            { value: "40+", label: "Teams", icon: <Braces /> },
+            { value: "₹35K", label: "in Prizes", icon: <Layers /> },
           ].map((stat, index) => (
             <motion.div
               key={index}
