@@ -298,7 +298,7 @@ export default function HeroSection() {
               MAKE-A-THON 6.0
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
-              The ultimate hackathon for the digital frontier
+              Innovate · Elevate · Collaborate
             </p>
           </div>
         </motion.div>
