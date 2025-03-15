@@ -67,7 +67,7 @@ export default function AchievementsSection() {
     {
       icon: <Lightbulb className="h-6 w-6 sm:h-8 sm:w-8 text-purple-400" />,
       value: "10+",
-      label: "Intenships",
+      label: "internship",
     },
   ]
 
