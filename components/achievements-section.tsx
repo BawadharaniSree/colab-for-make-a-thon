@@ -61,7 +61,7 @@ export default function AchievementsSection() {
     },
     {
       icon: <Award className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400" />,
-      value: "$15K",
+      value: "35K",
       label: "Prize Pool",
     },
     {
