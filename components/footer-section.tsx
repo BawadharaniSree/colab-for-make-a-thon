@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"
 import { Github, Twitter, Linkedin, Instagram, Mail, MapPin, Calendar, Terminal } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Phone } from "lucide-react";
+
 
 export default function FooterSection() {
   return (
@@ -41,7 +43,7 @@ export default function FooterSection() {
               </span>
             </div>
             <p className="text-gray-400 mb-6">
-              The ultimate cyberpunk hackathon where coders, designers, and innovators converge to build the future.
+            The ultimate innovation-driven hackathon where developers, designers, and tech enthusiasts unite to build groundbreaking hardware and software solutions.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
@@ -64,12 +66,14 @@ export default function FooterSection() {
             <h3 className="text-white font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {[
-                { name: "Home", href: "#home" },
-                { name: "About", href: "#about" },
-                { name: "Schedule", href: "#schedule" },
-                { name: "Mentors", href: "#mentors" },
-                { name: "Register", href: "#register" },
-                { name: "Sponsors", href: "#sponsors" },
+              { name: "Home", href: "#home" },
+              { name: "About", href: "#about" },
+              { name: "Theme", href: "#theme" },
+              { name: "Schedule", href: "#schedule" },
+              { name: "Updates", href: "#updates" },
+              { name: "Sponsors", href: "#sponsors" },
+              { name: "Achievements", href: "#achievements" },
+              { name: "FAQ", href: "#faq" },
               ].map((link, index) => (
                 <li key={index}>
                   <a href={link.href} className="text-gray-400 hover:text-cyan-400 transition-colors">
@@ -86,38 +90,53 @@ export default function FooterSection() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-cyan-400 mt-0.5" />
-                <span className="text-gray-400">info@makeathon.tech</span>
+                <span className="text-gray-400">ecea@svce.ac.in</span>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-cyan-400 mt-0.5" />
-                <span className="text-gray-400">TechHub Convention Center, 123 Innovation St, San Francisco, CA</span>
+                <MapPin className="h-11 w-11 text-cyan-400 mt-0.5" />
+                <span className="text-gray-400">SVCE,Pennalur Village Chennai - Bangaluru High Road Sriperumbudur Tk, Tamil Nadu 602117</span>
               </li>
               <li className="flex items-start gap-3">
                 <Calendar className="h-5 w-5 text-cyan-400 mt-0.5" />
-                <span className="text-gray-400">October 15-17, 2023</span>
+                <span className="text-gray-400">April 16-17, 2025</span>
               </li>
+              <li className="flex items-start gap-3">
+              <Phone className="h-5 w-5 text-cyan-400 mt-0.5" />
+              <span className="text-gray-400">
+                    Ramanathan M
+                      (Secretary)-77086 30410</span>
+              </li>
+              <li className="flex items-start gap-3">
+              <Phone className="h-5 w-5 text-cyan-400 mt-0.5" />
+              <span className="text-gray-400"> Yaaminy S K 
+              (Secretary)-63809 89594</span>
+              </li>
+            
+              
+
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div className="md:col-span-1">
-            <h3 className="text-white font-bold mb-6">Stay Updated</h3>
-            <p className="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-black/50 border border-cyan-500/30 rounded-md px-4 py-2 text-white focus:outline-none focus:border-cyan-500"
-              />
-              <Button className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-none whitespace-nowrap">
-                Subscribe
-              </Button>
-            </div>
-          </div>
+{/* Location Map Section */}
+<div className="md:col-span-1">
+  <h3 className="text-white font-bold mb-6">Our Location</h3>
+  <p className="text-gray-400 mb-4">Find us on the map below.</p>
+  <div className="w-full h-64 rounded-md overflow-hidden">
+    <iframe
+      className="w-full h-full border-0"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.732642346902!2d79.96767497580335!3d12.988944514496236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a528cd0cfb6e7ab%3A0x3294da3faad96a9!2sSri%20Venkateswara%20College%20of%20Engineering%20(SVCE)!5e0!3m2!1sen!2sin!4v1694347794223!5m2!1sen!2sin"
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>
+
+
         </div>
 
         {/* QR Codes */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 justify-center">
+        {/*<div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 justify-center">
           {[
             { label: "Event Details", url: "#event" },
             { label: "Registration", url: "#register" },
@@ -134,10 +153,10 @@ export default function FooterSection() {
             >
               <div className="w-24 h-24 bg-white p-2 rounded-md relative overflow-hidden">
                 {/* Simulated QR code */}
-                <div className="w-full h-full bg-[url('/placeholder.svg?height=80&width=80')] bg-no-repeat bg-center"></div>
+                {/*<div className="w-full h-full bg-[url('/placeholder.svg?height=80&width=80')] bg-no-repeat bg-center"></div>
 
                 {/* Glitch effect */}
-                <motion.div
+                {/*<motion.div
                   animate={{
                     opacity: [0, 0.1, 0],
                     y: [0, 80],
@@ -153,7 +172,7 @@ export default function FooterSection() {
               <span className="text-sm text-gray-400 mt-2">{qr.label}</span>
             </motion.div>
           ))}
-        </div>
+        </div>*/}
 
         {/* Copyright */}
         <motion.div
@@ -163,8 +182,8 @@ export default function FooterSection() {
           viewport={{ once: true }}
           className="mt-16 pt-8 border-t border-cyan-500/20 text-center"
         >
-          <p className="text-gray-500 text-sm">© 2023 Make-a-Thon 6.0. All rights reserved.</p>
-          <div className="flex justify-center gap-4 mt-4 text-xs text-gray-500">
+          <p className="text-gray-500 text-sm">© 2025 Make-a-Thon 6.0. All rights reserved.</p>
+          {/*<div className="flex justify-center gap-4 mt-4 text-xs text-gray-500">
             <a href="#" className="hover:text-cyan-400 transition-colors">
               Privacy Policy
             </a>
@@ -174,7 +193,7 @@ export default function FooterSection() {
             <a href="#" className="hover:text-cyan-400 transition-colors">
               Code of Conduct
             </a>
-          </div>
+          </div>*/}
 
           {/* Glitchy thank you message */}
           <motion.div
