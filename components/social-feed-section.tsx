@@ -1,71 +1,69 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { Twitter, MessageSquare, Heart, Repeat, Share2 } from "lucide-react"
+import { MessageSquare, Heart, Share2, Instagram, ChevronLeft, ChevronRight } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Link from "next/link"
+import Image from "next/image"
 
 // Mock social media data
-const twitterFeed = [
+const instagramFeed = [
   {
     id: 1,
+    image: "/placeholder.svg?height=600&width=600",
+    caption:
+      "Excited to announce MAKE-A-THON 6.0! Mark your calendars for March 15-17, 2025. Registration opens next week! #MakeAThon6 #Hackathon #TechInnovation",
+    likes: 245,
     user: {
-      name: "Alex Chen",
-      handle: "@alexcoder",
+      name: "makeathon",
       avatar: "/placeholder.svg?height=50&width=50",
     },
-    content:
-      "Just arrived at #MakeAThon6! The venue looks amazing with all these neon lights and cyberpunk vibes. Can't wait to start hacking! 🚀",
-    time: "10m ago",
-    likes: 24,
-    retweets: 5,
-    replies: 3,
+    link: "https://www.instagram.com/p/example1/",
+    postedAt: "2 days ago",
   },
   {
     id: 2,
+    image: "/placeholder.svg?height=600&width=600",
+    caption:
+      "Meet our amazing sponsors for MAKE-A-THON 6.0! Thanks to @techcorp, @devstudio, and @aiinnovate for supporting the next generation of innovators. #MakeAThon6 #TechSponsors",
+    likes: 189,
     user: {
-      name: "Make-a-Thon",
-      handle: "@makeathon",
+      name: "makeathon",
       avatar: "/placeholder.svg?height=50&width=50",
     },
-    content:
-      "Registration is now open! Head to the main hall to get your badges and swag bags. Remember to join a team before 11:30 AM. #MakeAThon6 #Hackathon",
-    time: "25m ago",
-    likes: 56,
-    retweets: 18,
-    replies: 7,
+    link: "https://www.instagram.com/p/example2/",
+    postedAt: "5 days ago",
   },
   {
     id: 3,
+    image: "/placeholder.svg?height=600&width=600",
+    caption:
+      "Throwback to last year's winning team! Their AI-powered healthcare solution is now being developed with @healthtech. Could your idea be next? #MakeAThon6 #Innovation #AIForGood",
+    likes: 312,
     user: {
-      name: "TechCorp",
-      handle: "@techcorp",
+      name: "makeathon",
       avatar: "/placeholder.svg?height=50&width=50",
     },
-    content:
-      "Proud to sponsor #MakeAThon6! Our mentors are ready to help teams with AI integration. Come find us at booth 12 for guidance and cool API access! 💻",
-    time: "45m ago",
-    likes: 42,
-    retweets: 12,
-    replies: 5,
+    link: "https://www.instagram.com/p/example3/",
+    postedAt: "1 week ago",
   },
   {
     id: 4,
+    image: "/placeholder.svg?height=600&width=600",
+    caption:
+      "New venue reveal! MAKE-A-THON 6.0 will be held at the stunning TechHub Convention Center. State-of-the-art facilities await you! #MakeAThon6 #TechHub #HackathonVenue",
+    likes: 276,
     user: {
-      name: "Sarah Dev",
-      handle: "@sarahcodes",
+      name: "makeathon",
       avatar: "/placeholder.svg?height=50&width=50",
     },
-    content:
-      "Looking for 2 more team members for #MakeAThon6! We're working on an AR solution for urban navigation. DM if interested! #TeamBuilding",
-    time: "1h ago",
-    likes: 18,
-    retweets: 8,
-    replies: 12,
+    link: "https://www.instagram.com/p/example4/",
+    postedAt: "2 weeks ago",
   },
 ]
 
-const discordFeed = [
+const chatFeed = [
   {
     id: 1,
     user: {
@@ -74,7 +72,7 @@ const discordFeed = [
       avatar: "/placeholder.svg?height=50&width=50",
     },
     content:
-      "Welcome to the official Make-a-Thon 6.0 Discord! Please check the #rules channel for guidelines and #resources for helpful links.",
+      "Welcome to the official Make-a-Thon 6.0 Chat! Please check the #rules channel for guidelines and #resources for helpful links.",
     time: "15m ago",
     channel: "#general",
   },
@@ -251,6 +249,100 @@ function RobotMascot() {
   )
 }
 
+// Instagram Carousel component
+function InstagramCarousel({ posts }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const carouselRef = useRef(null)
+
+  const nextPost = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === posts.length - 1 ? 0 : prevIndex + 1))
+  }
+
+  const prevPost = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? posts.length - 1 : prevIndex - 1))
+  }
+
+  return (
+    <div className="relative">
+      <div ref={carouselRef} className="overflow-hidden">
+        <div
+          className="flex transition-transform duration-300 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {posts.map((post) => (
+            <div key={post.id} className="w-full flex-shrink-0">
+              <Link href={post.link} target="_blank" rel="noopener noreferrer" className="block">
+                <div className="flex flex-col md:flex-row gap-4 p-4 border border-cyan-500/10 rounded-lg bg-black/30 hover:bg-black/50 transition-all">
+                  <div className="relative w-full md:w-48 h-48 flex-shrink-0">
+                    <Image
+                      src={post.image || "/placeholder.svg"}
+                      alt="Instagram post"
+                      fill
+                      className="object-cover rounded-md"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Image
+                        src={post.user.avatar || "/placeholder.svg"}
+                        alt={post.user.name}
+                        width={24}
+                        height={24}
+                        className="rounded-full"
+                      />
+                      <span className="font-bold text-white">{post.user.name}</span>
+                      <span className="text-gray-400 text-xs ml-auto">{post.postedAt}</span>
+                    </div>
+                    <p className="text-gray-300 text-sm mb-3 line-clamp-4 md:line-clamp-none">{post.caption}</p>
+                    <div className="flex items-center gap-3 text-gray-400 text-sm">
+                      <div className="flex items-center gap-1">
+                        <Heart className="h-4 w-4 text-red-400" />
+                        <span>{post.likes}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Share2 className="h-4 w-4" />
+                        <span>Share</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation buttons */}
+      <button
+        onClick={prevPost}
+        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/70 p-2 rounded-full text-white hover:bg-cyan-500/50 transition-all z-10"
+        aria-label="Previous post"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button
+        onClick={nextPost}
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/70 p-2 rounded-full text-white hover:bg-cyan-500/50 transition-all z-10"
+        aria-label="Next post"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
+
+      {/* Dots indicator */}
+      <div className="flex justify-center gap-2 mt-4">
+        {posts.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-2 h-2 rounded-full ${index === currentIndex ? "bg-cyan-400" : "bg-white/30"}`}
+            aria-label={`Go to post ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function SocialFeedSection() {
   const terminalMessages = [
     "Initializing Make-a-Thon 6.0 live feed...",
@@ -320,73 +412,30 @@ export default function SocialFeedSection() {
             <div className="bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-6">
               <h3 className="text-xl font-bold text-white mb-4 font-mono">Social Feed</h3>
 
-              <Tabs defaultValue="twitter" className="w-full">
+              <Tabs defaultValue="instagram" className="w-full">
                 <TabsList className="grid w-full grid-cols-2 mb-6 bg-black/50 border border-cyan-500/20">
                   <TabsTrigger
-                    value="twitter"
+                    value="instagram"
                     className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-cyan-500/20 data-[state=active]:to-purple-500/20 data-[state=active]:text-white"
                   >
-                    <Twitter className="h-4 w-4 mr-2" />
-                    Twitter
+                    <Instagram className="h-4 w-4 mr-2" />
+                    Instagram
                   </TabsTrigger>
                   <TabsTrigger
-                    value="discord"
+                    value="chat"
                     className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-cyan-500/20 data-[state=active]:to-purple-500/20 data-[state=active]:text-white"
                   >
                     <MessageSquare className="h-4 w-4 mr-2" />
-                    Discord
+                    Chat
                   </TabsTrigger>
                 </TabsList>
 
-                <TabsContent value="twitter" className="mt-0 space-y-4">
-                  {twitterFeed.map((tweet, index) => (
-                    <motion.div
-                      key={tweet.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className="p-4 border border-cyan-500/10 rounded-lg bg-black/30 hover:bg-black/50 transition-all"
-                    >
-                      <div className="flex gap-3">
-                        <img
-                          src={tweet.user.avatar || "/placeholder.svg"}
-                          alt={tweet.user.name}
-                          className="w-10 h-10 rounded-full"
-                        />
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start">
-                            <div>
-                              <div className="font-bold text-white">{tweet.user.name}</div>
-                              <div className="text-gray-400 text-sm">{tweet.user.handle}</div>
-                            </div>
-                            <div className="text-gray-400 text-xs">{tweet.time}</div>
-                          </div>
-                          <div className="mt-2 text-gray-300">{tweet.content}</div>
-                          <div className="mt-3 flex gap-6 text-gray-400 text-sm">
-                            <div className="flex items-center gap-1 hover:text-cyan-400 transition-colors cursor-pointer">
-                              <MessageSquare className="h-4 w-4" />
-                              <span>{tweet.replies}</span>
-                            </div>
-                            <div className="flex items-center gap-1 hover:text-green-400 transition-colors cursor-pointer">
-                              <Repeat className="h-4 w-4" />
-                              <span>{tweet.retweets}</span>
-                            </div>
-                            <div className="flex items-center gap-1 hover:text-red-400 transition-colors cursor-pointer">
-                              <Heart className="h-4 w-4" />
-                              <span>{tweet.likes}</span>
-                            </div>
-                            <div className="flex items-center gap-1 hover:text-cyan-400 transition-colors cursor-pointer">
-                              <Share2 className="h-4 w-4" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
+                <TabsContent value="instagram" className="mt-0">
+                  <InstagramCarousel posts={instagramFeed} />
                 </TabsContent>
 
-                <TabsContent value="discord" className="mt-0 space-y-4">
-                  {discordFeed.map((message, index) => (
+                <TabsContent value="chat" className="mt-0 space-y-4">
+                  {chatFeed.map((message, index) => (
                     <motion.div
                       key={message.id}
                       initial={{ opacity: 0, y: 20 }}

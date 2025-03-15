@@ -19,37 +19,39 @@ export default function TimelineSection() {
   // Timeline events
   const timelineEvents = [
     {
-      date: "March 17, 2025",
-      title: "Dates Release",
-      description: "Mark your calendars for MAKE-A-THON 6.0 event dates!",
+      date: "March 1, 2025",
+      title: "Registration Opens",
+      description: "Sign up your team and secure your spot for MAKE-A-THON 6.0",
+      icon: <Calendar className="h-6 w-6 text-cyan-400" />,
+    },
+    {
+      date: "March 10, 2025",
+      title: "Team Confirmation",
+      description: "Final team roster confirmation and pre-event briefing",
       icon: <Users className="h-6 w-6 text-purple-400" />,
     },
     {
-      //date: "March 19, 2025",
-      date: " To be Announced ",
-      title: "Problem Statement Release",
-      description: "Explore the challenges for MAKE-A-THON 6.0 and start shaping your innovative solutions!",
+      date: "March 15, 2025",
+      title: "Hackathon Kickoff",
+      description: "Opening ceremony, theme announcements, and coding begins",
       icon: <Zap className="h-6 w-6 text-cyan-400" />,
     },
     {
-      //date: "April 4, 2025",
-      date: " To be Announced ",
-      title: "Registration Closes",
-      description: "Last chance to sign up and secure your spot for MAKE-A-THON 6.0!",
+      date: "March 16, 2025",
+      title: "Mentorship Sessions",
+      description: "One-on-one sessions with industry experts and tech mentors",
       icon: <MessageSquare className="h-6 w-6 text-purple-400" />,
     },
     {
-      //date: "April 9, 2025",
-      date: " To be Announced ",
-      title: "Shortlisted Teams Announcement",
-      description: "The results are out! Check out the shortlisted teams for MAKE-A-THON 6.0. Congratulations to all the selected teams!",
-      icon: <Award className="h-6 w-6 text-purple-400" />,
+      date: "March 17, 2025",
+      title: "Project Submission",
+      description: "Final code submission and preparation for presentations",
+      icon: <Send className="h-6 w-6 text-cyan-400" />,
     },
     {
-      //date: "April 16, 2025",
-      date: " To be Announced ",
-      title: "MAKE-A-THON 6.0 - Event Day",
-      description: "The wait is over! Witness innovation and creativity as teams bring their ideas to life at MAKE-A-THON 6.0. Let the hacking begin!",
+      date: "March 17, 2025",
+      title: "Demo Day & Awards",
+      description: "Project demonstrations, judging, and awards ceremony",
       icon: <Award className="h-6 w-6 text-purple-400" />,
     },
   ]
@@ -160,6 +162,9 @@ export default function TimelineSection() {
           viewport={{ once: true }}
           className="flex justify-center mt-12"
         >
+
+{/* 
+
           <Link href="/top-teams">
             <Button className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white border-none shadow-lg shadow-purple-500/20 group px-6 py-3 text-lg">
               <span>View Top 40 Selected Teams</span>
@@ -167,6 +172,8 @@ export default function TimelineSection() {
             </Button>
           </Link>
         </motion.div>
+
+        */}
 
         {/* Decorative elements */}
         <div className="absolute top-1/4 left-10 w-24 h-24 border border-purple-500/20 rounded-full blur-[80px] bg-purple-500/10"></div>
@@ -184,3 +191,4 @@ export default function TimelineSection() {
     </section>
   )
 }
+
