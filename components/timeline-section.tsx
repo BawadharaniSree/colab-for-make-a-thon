@@ -18,13 +18,6 @@ export default function TimelineSection() {
 
   // Timeline events
   const timelineEvents = [
-{/*    {
-      date: "March 16, 2025",
-      title: "Website Release",
-      description: "Explore event details and get ready for MAKE-A-THON 6.0!",
-      icon: <Calendar className="h-6 w-6 text-cyan-400" />,
-    },
-*/},
     {
       date: "March 17, 2025",
       title: "Dates Release",
@@ -43,13 +36,6 @@ export default function TimelineSection() {
       description: "Last chance to sign up and secure your spot for MAKE-A-THON 6.0!",
       icon: <MessageSquare className="h-6 w-6 text-purple-400" />,
     },
-{/*    {
-      date: "April 6, 2025",
-      title: "Registration Extended & Final Closure",
-      description: "Due to high demand, registration has been extended! Don’t miss this final chance to be part of MAKE-A-THON 6.0.",
-      icon: <Send className="h-6 w-6 text-cyan-400" />,
-    },
-*/},
     {
       date: "April 9, 2025",
       title: "Shortlisted Teams Announcement",
