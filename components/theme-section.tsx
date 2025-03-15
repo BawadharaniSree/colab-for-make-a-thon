@@ -8,28 +8,28 @@ const ThemeSection = () => {
   // Theme categories with icons
   const themes = [
     {
-      icon: <Brain className="h-10 w-10 text-cyan-400" />,
-      title: "Artificial Intelligence",
-      description: "Harness the power of AI to solve complex problems and create innovative solutions.",
-      route: "/problems/ai",
+      //icon: <Brain className="h-10 w-10 text-cyan-400" />,
+      title: "comming soon",
+      //description: "Harness the power of AI to solve complex problems and create innovative solutions.",
+      route: "/problems/stay-tuned",
     },
     {
-      icon: <Lock className="h-10 w-10 text-purple-400" />,
-      title: "Cybersecurity",
-      description: "Develop cutting-edge security solutions to protect digital assets and privacy.",
-      route: "/problems/cybersecurity",
+      //icon: <Lock className="h-10 w-10 text-purple-400" />,
+      title: "comming soon",
+      //description: "Develop cutting-edge security solutions to protect digital assets and privacy.",
+      route: "/problems/stay-tuned",
     },
     {
-      icon: <Chip className="h-10 w-10 text-cyan-400" />,
-      title: "Blockchain",
-      description: "Build decentralized applications that revolutionize trust and transparency.",
-      route: "/problems/blockchain",
+      //icon: <Chip className="h-10 w-10 text-cyan-400" />,
+      title: "comming soon",
+      //description: "Build decentralized applications that revolutionize trust and transparency.",
+      route: "/problems/stay-tuned",
     },
     {
-      icon: <Globe className="h-10 w-10 text-purple-400" />,
-      title: "Internet of Things",
-      description: "Connect the physical and digital worlds to create smarter environments.",
-      route: "/problems/iot",
+      //icon: <Globe className="h-10 w-10 text-purple-400" />,
+      title: "comming soon",
+      //description: "Connect the physical and digital worlds to create smarter environments.",
+      route: "/problems/stay-tuned",
     },
   ]
 
@@ -83,7 +83,7 @@ const ThemeSection = () => {
               {/* Add button for each theme */}
               <Link href={theme.route}>
                 <Button className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-none shadow-lg shadow-cyan-500/20 group">
-                  <span>View Problem Statements</span>
+                  <span>stay tuned !!!</span>
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>

@@ -5,6 +5,7 @@ import { useScroll } from "framer-motion"
 import HeroSection from "@/components/hero-section"
 import AboutSection from "@/components/about-section"
 import ScheduleSection from "@/components/schedule-section"
+import Staytuned from "@/components/stay-tuned"
 import MentorsSection from "@/components/mentors-section"
 import SocialFeedSection from "@/components/social-feed-section"
 import SponsorsSection from "@/components/sponsors-section"
@@ -31,7 +32,7 @@ export default function Home() {
         <AboutSection scrollYProgress={scrollYProgress} />
         <TimelineSection />
         <ThemeSection />
-        <ScheduleSection />
+        <Staytuned />
         <SocialFeedSection />
         <SponsorsSection />
         <AchievementsSection />
