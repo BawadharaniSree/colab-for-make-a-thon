@@ -171,9 +171,12 @@ export default function TimelineSection() {
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
+
+           */}
+
         </motion.div>
 
-        */}
+       
 
         {/* Decorative elements */}
         <div className="absolute top-1/4 left-10 w-24 h-24 border border-purple-500/20 rounded-full blur-[80px] bg-purple-500/10"></div>
