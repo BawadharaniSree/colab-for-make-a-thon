@@ -2,7 +2,9 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { Calendar, Clock, Award, Zap, Users, MessageSquare, Send } from "lucide-react"
+import { Calendar, Clock, Award, Zap, Users, MessageSquare, Send, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 export default function TimelineSection() {
   const ref = useRef(null)
@@ -107,54 +109,12 @@ export default function TimelineSection() {
               whileInView={{ opacity: 1, y: 0, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative mb-16 flex ${
-                index % 2 === 0 ? "justify-start md:justify-end" : "justify-start"
-              } md:${index % 2 === 0 ? "pr-8" : "pl-8"}`}
+              className={`relative mb-16 flex flex-col ${
+                index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
+              } items-center`}
             >
-              <div className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
-                <div className="p-6 bg-black/50 backdrop-blur-sm border border-purple-500/30 rounded-lg hover:border-purple-500/50 transition-all shadow-lg shadow-purple-500/10">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div
-                      className={`p-2 rounded-full bg-black/70 border border-purple-500/30 ${index % 2 === 0 ? "md:order-last" : ""}`}
-                    >
-                      {event.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-white">{event.title}</h3>
-                  </div>
-                  <p className="text-gray-300 mb-3">{event.description}</p>
-                  <div
-                    className={`flex items-center gap-2 text-sm text-purple-400 ${index % 2 === 0 ? "md:justify-end" : ""}`}
-                  >
-                    <Clock className="h-4 w-4" />
-                    <span>{event.date}</span>
-                  </div>
-
-                  {/* Animated connection line to center */}
-                  <div
-                    className={`absolute top-1/2 ${
-                      index % 2 === 0 ? "right-0 md:right-[-30px]" : "left-0 md:left-[-30px]"
-                    } w-8 h-0.5 bg-gradient-to-r ${
-                      index % 2 === 0 ? "from-purple-500 to-transparent" : "from-transparent to-purple-500"
-                    }`}
-                  >
-                    <motion.div
-                      className="absolute top-0 left-0 w-full h-full bg-white"
-                      animate={{
-                        x: index % 2 === 0 ? ["100%", "-100%"] : ["-100%", "100%"],
-                        opacity: [0.1, 0.5, 0.1],
-                      }}
-                      transition={{
-                        repeat: Number.POSITIVE_INFINITY,
-                        duration: 2,
-                        ease: "linear",
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-
               {/* Center dot with pulse effect */}
-              <div className="absolute left-1/2 top-6 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 z-10 flex items-center justify-center">
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 z-10 flex items-center justify-center">
                 <motion.div
                   className="absolute inset-0 rounded-full bg-purple-500"
                   animate={{
@@ -169,8 +129,45 @@ export default function TimelineSection() {
                 />
                 <div className="w-3 h-3 rounded-full bg-black"></div>
               </div>
+
+              {/* Event content */}
+              <div
+                className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8 md:text-left"} mt-8 md:mt-0`}
+              >
+                <div className="p-6 bg-black/50 backdrop-blur-sm border border-purple-500/30 rounded-lg hover:border-purple-500/50 transition-all shadow-lg shadow-purple-500/10">
+                  <div
+                    className={`flex items-center gap-3 mb-2 ${index % 2 === 0 ? "md:flex-row-reverse" : "flex-row"}`}
+                  >
+                    <div className="p-2 rounded-full bg-black/70 border border-purple-500/30">{event.icon}</div>
+                    <h3 className="text-xl font-bold text-white">{event.title}</h3>
+                  </div>
+                  <p className="text-gray-300 mb-3">{event.description}</p>
+                  <div
+                    className={`flex items-center gap-2 text-sm text-purple-400 ${index % 2 === 0 ? "md:justify-end" : ""}`}
+                  >
+                    <Clock className="h-4 w-4" />
+                    <span>{event.date}</span>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Top 40 Teams Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-12"
+        >
+          <Link href="/top-teams">
+            <Button className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white border-none shadow-lg shadow-purple-500/20 group px-6 py-3 text-lg">
+              <span>View Top 40 Selected Teams</span>
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </motion.div>
 
         {/* Decorative elements */}
