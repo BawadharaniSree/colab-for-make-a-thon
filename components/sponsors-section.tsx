@@ -6,23 +6,23 @@ import { motion, useScroll, useTransform } from "framer-motion"
 // Mock sponsor data
 const sponsors = {
   platinum: [
-    { name: "TechCorp", logo: "/coming soon.jpg?height=100&width=200" },
-    { name: "InnovateLabs", logo: "/coming soon.jpg?height=100&width=200" },
-    { name: "FutureAI", logo: "/coming soon.jpg?height=100&width=200" },
+    { name: "TechCorp", logo: "/coming soon.jpeg?height=100&width=200" },
+    { name: "InnovateLabs", logo: "/coming soon.jpeg?height=100&width=200" },
+    { name: "FutureAI", logo: "/coming soon.jpeg?height=100&width=200" },
   ],
   gold: [
-    { name: "CodeWorks", logo: "/coming soon.jpg?height=80&width=160" },
-    { name: "QuantumTech", logo: "/coming soon.jpg?height=80&width=160" },
-    { name: "CyberSolutions", logo: "/coming soon.jpg?height=80&width=160" },
-    { name: "DataSphere", logo: "/coming soon.jpg?height=80&width=160" },
+    { name: "CodeWorks", logo: "/coming soon.jpeg?height=80&width=160" },
+    { name: "QuantumTech", logo: "/coming soon.jpeg?height=80&width=160" },
+    { name: "CyberSolutions", logo: "/coming soon.jpeg?height=80&width=160" },
+    { name: "DataSphere", logo: "/coming soon.jpeg?height=80&width=160" },
   ],
   silver: [
-    { name: "CloudNine", logo: "/coming soon.jpg?height=60&width=120" },
-    { name: "DevOps Inc", logo: "/coming soon.jpg?height=60&width=120" },
-    { name: "SecureNet", logo: "/coming soon.jpg?height=60&width=120" },
-    { name: "BlockChain Co", logo: "/coming soon.jpg?height=60&width=120" },
-    { name: "RoboTech", logo: "/coming soon.jpg?height=60&width=120" },
-    { name: "AIVentures", logo: "/coming soon.jpg?height=60&width=120" },
+    { name: "CloudNine", logo: "/coming soon.jpeg?height=60&width=120" },
+    { name: "DevOps Inc", logo: "/coming soon.jpeg?height=60&width=120" },
+    { name: "SecureNet", logo: "/coming soon.jpeg?height=60&width=120" },
+    { name: "BlockChain Co", logo: "/coming soon.jpeg?height=60&width=120" },
+    { name: "RoboTech", logo: "/coming soon.jpeg?height=60&width=120" },
+    { name: "AIVentures", logo: "/coming soon.jpeg?height=60&width=120" },
   ],
 }
 
@@ -101,7 +101,7 @@ export default function SponsorsSection() {
                   ></motion.div>
 
                   <img
-                    src={sponsor.logo || "/coming soon.jpg"}
+                    src={sponsor.logo || "/coming soon.jpeg"}
                     alt={sponsor.name}
                     className="max-h-20 max-w-full transition-all duration-300 group-hover:scale-110"
                   />
@@ -143,7 +143,7 @@ export default function SponsorsSection() {
                   ></motion.div>
 
                   <img
-                    src={sponsor.logo || "/coming soon.jpg"}
+                    src={sponsor.logo || "/coming soon.jpeg"}
                     alt={sponsor.name}
                     className="max-h-16 max-w-full transition-all duration-300 group-hover:scale-110"
                   />
@@ -172,7 +172,7 @@ export default function SponsorsSection() {
               >
                 <div className="bg-black/50 backdrop-blur-sm border border-gray-500/20 rounded-lg p-4 flex items-center justify-center h-24 group-hover:border-gray-400/50 transition-all">
                   <img
-                    src={sponsor.logo || "/coming soon.jpg"}
+                    src={sponsor.logo || "/coming soon.jpeg"}
                     alt={sponsor.name}
                     className="max-h-12 max-w-full transition-all duration-300 group-hover:scale-110"
                   />
