@@ -11,7 +11,7 @@ export default function TopTeamsPage() {
     {
       id: 1,
       name: "Quantum Coders",
-      members: ["Alex Johnson", "Priya Patel", "Marcus Chen", "Sophia Rodriguez"],
+      members: ["Alex Johnson", "Priya Patel", "Marcus Chen", "Sophia Rodriguez", "Raj Sharma", "David Kim"],
       project: "AI-Powered Medical Diagnosis Assistant",
       category: "Artificial Intelligence",
       highlight: "Best Technical Implementation",
@@ -19,7 +19,7 @@ export default function TopTeamsPage() {
     {
       id: 2,
       name: "Blockchain Wizards",
-      members: ["Emma Wilson", "Raj Sharma", "David Kim", "Olivia Martinez"],
+      members: ["Emma Wilson", "Raj Sharma", "David Kim", "Olivia Martinez", "Aisha Mohammed", "Lucas Garcia"],
       project: "Decentralized Voting Platform",
       category: "Blockchain",
       highlight: "Most Innovative Solution",
@@ -27,7 +27,7 @@ export default function TopTeamsPage() {
     {
       id: 3,
       name: "Secure Nexus",
-      members: ["James Taylor", "Aisha Mohammed", "Lucas Garcia", "Zoe Wong"],
+      members: ["James Taylor", "Aisha Mohammed", "Lucas Garcia", "Zoe Wong", "Priya Patel", "Marcus Chen"],
       project: "Zero-Knowledge Authentication System",
       category: "Cybersecurity",
       highlight: "Best Security Solution",
@@ -35,7 +35,7 @@ export default function TopTeamsPage() {
     {
       id: 4,
       name: "IoT Innovators",
-      members: ["Noah Brown", "Fatima Ali", "Ethan Park", "Isabella Nguyen"],
+      members: ["Noah Brown", "Fatima Ali", "Ethan Park", "Isabella Nguyen", "Aisha Mohammed", "Lucas Garcia"],
       project: "Smart City Traffic Management",
       category: "Internet of Things",
       highlight: "Most Practical Application",
@@ -43,7 +43,7 @@ export default function TopTeamsPage() {
     {
       id: 5,
       name: "Neural Network",
-      members: ["Liam Wilson", "Amara Okafor", "Daniel Lee", "Maya Patel"],
+      members: ["Liam Wilson", "Amara Okafor", "Daniel Lee", "Maya Patel", "Aisha Mohammed", "Lucas Garcia"],
       project: "Real-time Language Translation",
       category: "Artificial Intelligence",
       highlight: "Best User Experience",
@@ -51,7 +51,7 @@ export default function TopTeamsPage() {
     {
       id: 6,
       name: "Crypto Pioneers",
-      members: ["Ava Johnson", "Omar Hassan", "Sophia Chen", "Jackson Moore"],
+      members: ["Ava Johnson", "Omar Hassan", "Sophia Chen", "Jackson Moore", "Aisha Mohammed", "Lucas Garcia"],
       project: "NFT Marketplace for Digital Artists",
       category: "Blockchain",
       highlight: "Most Creative Solution",
@@ -77,24 +77,24 @@ export default function TopTeamsPage() {
   // Stats about the finalists
   const stats = [
     {
-      icon: <Users className="h-6 w-6 text-cyan-400" />,
+      icon: <Users className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400" />,
       value: "40",
       label: "Teams",
     },
     {
-      icon: <Lightbulb className="h-6 w-6 text-purple-400" />,
-      value: "160+",
+      icon: <Lightbulb className="h-6 w-6 sm:h-8 sm:w-8 text-purple-400"  />,
+      value: "240+",
       label: "Participants",
     },
     {
-      icon: <Code className="h-6 w-6 text-cyan-400" />,
+      icon: <Code className="h-6 w-6 sm:h-8 sm:w-8 text-cyan-400"  />,
       value: "4",
       label: "Categories",
     },
     {
-      icon: <Star className="h-6 w-6 text-purple-400" />,
+      icon: <Star className="h-6 w-6 sm:h-8 sm:w-8 text-purple-400" />,
       value: "10",
-      label: "Countries",
+      label: "Colleges",
     },
   ]
 
