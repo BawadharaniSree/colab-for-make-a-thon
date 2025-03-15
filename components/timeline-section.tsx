@@ -43,7 +43,7 @@ export default function TimelineSection() {
       description: "Last chance to sign up and secure your spot for MAKE-A-THON 6.0!",
       icon: <MessageSquare className="h-6 w-6 text-purple-400" />,
     },
-{/*}    {
+{/*    {
       date: "April 6, 2025",
       title: "Registration Extended & Final Closure",
       description: "Due to high demand, registration has been extended! Don’t miss this final chance to be part of MAKE-A-THON 6.0.",
