@@ -456,7 +456,7 @@ export default function AboutSection({ scrollYProgress }) {
           </motion.div>
         </div>
 
-        {/* Stats with enhanced styling */}
+        {/* Stats with enhanced styling 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -501,7 +501,7 @@ export default function AboutSection({ scrollYProgress }) {
               <div className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div>  */}
       </div>
     </section>
   )
