@@ -176,7 +176,7 @@ export default function AboutSection({ scrollYProgress }) {
                 },
                 {
                   icon: <Zap className="h-8 w-8 text-purple-400" />,
-                  title: "48-Hour Sprint",
+                  title: "24-Hour Sprint",
                   description: "An adrenaline-fueled coding marathon where ideas transform into working prototypes.",
                 },
                 {
