@@ -113,7 +113,7 @@ export default function AboutSection({ scrollYProgress }) {
             serves as an opportunity for the students to upskill themselves on recent technologies.
             </p><div className="flex flex-col items-center gap-4 md:gap-8 mt-4 md:mt-8">
   {/* Top RAIC - Centered */}
-  <div className="h-24 md:h-32 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+  <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
     <img 
       src="/new RAIC logo.png" 
       alt="RAIC" 
@@ -125,7 +125,7 @@ export default function AboutSection({ scrollYProgress }) {
   <div className="grid grid-cols-2 md:flex justify-center items-center gap-4 md:gap-8">
     {/* ECEA - Left */}
     <div className="flex justify-end">
-      <div className="h-24 md:h-32 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+      <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
         <img 
           src="/new ECEA logo.png" 
           alt="ECE Association" 
@@ -136,7 +136,7 @@ export default function AboutSection({ scrollYProgress }) {
 
     {/* IETE - Center */}
     <div className="flex justify-center">
-      <div className="h-24 md:h-32 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+      <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
         <img 
           src="/new IETE logo.png" 
           alt="IETE-SF" 
@@ -147,7 +147,7 @@ export default function AboutSection({ scrollYProgress }) {
 
     {/* Bottom RAIC - Right */}
     <div className="flex justify-start">
-      <div className="h-24 md:h-32 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+      <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
         <img 
           src="/new RAIC logo.png" 
           alt="RAIC" 
