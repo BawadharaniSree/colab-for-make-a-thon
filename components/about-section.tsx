@@ -169,6 +169,11 @@ export default function AboutSection({ scrollYProgress }) {
             <div className="space-y-8">
               {[
                 {
+                  icon: <Bot className="h-8 w-8 text-purple-400" />,
+                  title: "Hardware Innovations",
+                  description: "Explore groundbreaking developments in hardware design, embedded systems, and IoT solutions.",
+                },
+                {
                   icon: <Cpu className="h-8 w-8 text-cyan-400" />,
                   title: "Cutting-Edge Tech",
                   description:
@@ -184,11 +189,7 @@ export default function AboutSection({ scrollYProgress }) {
                   title: "Expert Mentorship",
                   description: "Get guidance from industry veterans and tech pioneers throughout the event.",
                 },
-                {
-                  icon: <Bot className="h-8 w-8 text-purple-400" />,
-                  title: "Hardware Innovations",
-                  description: "Explore groundbreaking developments in hardware design, embedded systems, and IoT solutions.",
-                },
+
               ].map((item, index) => (
                 <motion.div
                   key={index}
