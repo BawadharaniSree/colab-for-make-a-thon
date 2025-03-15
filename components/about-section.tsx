@@ -146,7 +146,7 @@ export default function AboutSection({ scrollYProgress }) {
     </div>
 
     {/* Bottom RAIC - Right */}
-    <div className="flex justify-start">
+    <div className="col-span-2 md:col-auto flex justify-center">
       <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
         <img 
           src="/new RAIC logo.png" 
