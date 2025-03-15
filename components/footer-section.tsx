@@ -96,24 +96,29 @@ export default function FooterSection() {
                 <MapPin className="h-11 w-11 text-cyan-400 mt-0.5" />
                 <span className="text-gray-400">SVCE,Pennalur Village Chennai - Bangaluru High Road Sriperumbudur Tk, Tamil Nadu 602117</span>
               </li>
+              {/*}
               <li className="flex items-start gap-3">
                 <Calendar className="h-5 w-5 text-cyan-400 mt-0.5" />
                 <span className="text-gray-400">April 16-17, 2025</span>
               </li>
+              */}
               <li className="flex items-start gap-3">
               <Phone className="h-5 w-5 text-cyan-400 mt-0.5" />
               <span className="text-gray-400">
-                    Ramanathan M
-                      (Secretary)-77086 30410</span>
+                    Ramanathan M<br />
+                      Secretary, ECE Association.<br />+91 77086 30410</span>
               </li>
               <li className="flex items-start gap-3">
               <Phone className="h-5 w-5 text-cyan-400 mt-0.5" />
-              <span className="text-gray-400"> Yaaminy S K 
-              (Secretary)-63809 89594</span>
+              <span className="text-gray-400"> Yaaminy S K <br />
+              Secretary, IETE-SF.<br />+91 63809 89594</span>
+              </li>
+              <li className="flex items-start gap-3">
+              <Phone className="h-5 w-5 text-cyan-400 mt-0.5" />
+              <span className="text-gray-400"> Haresh Krishna G S <br />
+              Secretary, RAIC.<br />+91 98846 68770</span>
               </li>
             
-              
-
             </ul>
           </div>
 
@@ -212,4 +217,3 @@ export default function FooterSection() {
     </footer>
   )
 }
-
