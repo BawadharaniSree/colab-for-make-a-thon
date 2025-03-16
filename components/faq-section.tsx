@@ -24,9 +24,13 @@ export default function FAQSection() {
     },
     {
       question: "What are the requirements to participate?",
-      answer:
-        "To participate, you must: <br></br> - Register on the website <br></br> - Pay the registration fee  <br></br> - Submit an abstract for evaluation and get shortlisted",
-    },
+      answer: [
+        "To participate, you must:",
+          "- Register on the website",
+          "- Pay the registration fee",
+          "- Submit an abstract for evaluation and get shortlisted",
+    ],
+    }
     {
       question: "Is there a registration fee?",
       answer:
