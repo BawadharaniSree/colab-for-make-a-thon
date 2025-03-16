@@ -43,7 +43,7 @@ export default function Navbar() {
     >
       
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="https://www.example.com">
+        <a href="#home">
         <div className="flex items-center gap-2">
           <Terminal className="h-6 w-6 text-cyan-400" />
           <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
