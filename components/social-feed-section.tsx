@@ -346,11 +346,9 @@ function InstagramCarousel({ posts }) {
 export default function SocialFeedSection() {
   const terminalMessages = [
     "Initializing Make-a-Thon 6.0 live feed...",
-    "Team Cyber Wizards just submitted their project!",
-    "Workshop on AI Ethics starting in Room 204 in 15 minutes",
-    "Reminder: Lunch will be served at 12:30 PM",
-    "New API challenge announced by TechCorp - check #announcements",
-    "System update: WiFi issues in east wing resolved",
+    "The Makeathon website is now live!",
+    "Schedule and dates will be announced soon",
+    "Problem statement dropping in 2 days.",
   ]
 
   return (
