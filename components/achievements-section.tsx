@@ -21,7 +21,7 @@ export default function AchievementsSection() {
   // Gallery images
   const galleryImages = [
     {
-      src: "/placeholder.svg?height=600&width=800",
+      src: "/prize_winners.png?height=600&width=800",
       alt: "Winners of MAKE-A-THON 5.0",
       caption: "Grand Prize Winners - Team Quantum Leap",
     },
