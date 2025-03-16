@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 
 // Mock sponsor data
 const sponsors = {
+   /*
   platinum: [
     { name: "TechCorp", logo: "/coming soon.jpeg?height=100&width=200" },
     { name: "InnovateLabs", logo: "/coming soon.jpeg?height=100&width=200" },
@@ -24,6 +25,7 @@ const sponsors = {
     { name: "RoboTech", logo: "/coming soon.jpeg?height=60&width=120" },
     { name: "AIVentures", logo: "/coming soon.jpeg?height=60&width=120" },
   ],
+  */
 }
 
 export default function SponsorsSection() {
@@ -63,8 +65,8 @@ export default function SponsorsSection() {
             Make-a-Thon 6.0 is made possible by the generous support of our sponsors.
           </p>
         </motion.div>
-
-        {/* Platinum Sponsors */}
+{/*}
+        {/* Platinum Sponsors 
         <div className="mb-16">
           <h3 className="text-xl font-bold text-center mb-8 text-white">
             <span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full border border-cyan-500/30">
@@ -82,7 +84,7 @@ export default function SponsorsSection() {
                 className="relative group"
               >
                 <div className="bg-black/50 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-8 flex items-center justify-center h-40 group-hover:border-cyan-500/50 transition-all">
-                  {/* Neon flicker effect */}
+                  {/* Neon flicker effect 
                   <motion.div
                     animate={{
                       opacity: [0.5, 0.8, 0.5],
@@ -111,7 +113,7 @@ export default function SponsorsSection() {
           </div>
         </div>
 
-        {/* Gold Sponsors */}
+        {/* Gold Sponsors 
         <div className="mb-16">
           <h3 className="text-xl font-bold text-center mb-8 text-white">
             <span className="inline-block px-4 py-1 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full border border-yellow-500/30">
@@ -129,7 +131,7 @@ export default function SponsorsSection() {
                 className="relative group"
               >
                 <div className="bg-black/50 backdrop-blur-sm border border-yellow-500/20 rounded-lg p-6 flex items-center justify-center h-32 group-hover:border-yellow-500/50 transition-all">
-                  {/* Subtle glow effect */}
+                  {/* Subtle glow effect 
                   <motion.div
                     animate={{
                       opacity: [0.3, 0.5, 0.3],
@@ -152,8 +154,8 @@ export default function SponsorsSection() {
             ))}
           </div>
         </div>
-
-        {/* Silver Sponsors */}
+*/}
+        {/* Silver Sponsors 
         <div>
           <h3 className="text-xl font-bold text-center mb-8 text-white">
             <span className="inline-block px-4 py-1 bg-gradient-to-r from-gray-500/20 to-gray-400/20 rounded-full border border-gray-500/30">
@@ -181,6 +183,29 @@ export default function SponsorsSection() {
             ))}
           </div>
         </div>
+*/}
+
+{/* Replaced Platinum, Gold, and Silver sponsors with a single "Coming Soon" image */}
+<div className="mb-16">
+  <h3 className="text-xl font-bold text-center mb-8 text-white">
+    {/*<span className="inline-block px-4 py-1 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full border border-cyan-500/30">
+      Coming Soon
+    </span>*/}
+  </h3>
+  <div className="flex justify-center">
+    {/* Gradient Border Container */}
+    <div className="relative w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] h-auto">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg -z-10 "></div>
+      {/* Image */}
+      <img
+        src="/coming soon.jpeg"
+        alt="Coming Soon"
+        className="w-full h-auto object-cover transition-all duration-300 rounded-lg relative z-10 p-2"
+      />
+    </div>
+  </div>
+</div>
 
         {/* CTA */}
         <motion.div
