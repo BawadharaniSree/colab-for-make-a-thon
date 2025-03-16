@@ -81,7 +81,7 @@ export default function StayTunedSection() {
               <h3 className="text-lg font-medium text-white">Stay Updated!</h3>
             </div>
             <p className="text-gray-300 mb-4">Follow our Instagram page for the latest updates and announcements.</p>
-            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+            <a href="https://www.instagram.com/eceasvce?igsh=eXB1aTR6eWZldGht" className="text-gray-400 hover:text-cyan-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             
