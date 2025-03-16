@@ -22,15 +22,11 @@ export default function FAQSection() {
       answer:
         "Any engineering student, regardless of their year of study or department, are eligible to participate, Students from other engineering colleges are most welcome to join...",
     },
-    {
-      question: "What are the requirements to participate?",
-      answer: [
-        "To participate, you must:",
-          "- Register on the website",
-          "- Pay the registration fee",
-          "- Submit an abstract for evaluation and get shortlisted",
-    ],
-    }
+   {
+  question: "What are the requirements to participate?",
+  answer:
+    "To participate, you must: <br/> - Register on the website <br/> - Pay the registration fee  <br/> - Submit an abstract for evaluation and get shortlisted",
+}
     {
       question: "Is there a registration fee?",
       answer:
