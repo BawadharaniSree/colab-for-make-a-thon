@@ -215,13 +215,15 @@ export default function SponsorsSection() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <p className="text-gray-300 mb-6">Interested in sponsoring Make-a-Thon 6.0?</p>
-          <a
-            href="#contact"
-            className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white rounded-md transition-all"
-          >
-            Become a Sponsor
-          </a>
+<p className="text-gray-300 mb-6">Interested in sponsoring Make-a-Thon 6.0?</p>
+<a
+  href="https://forms.gle/2ndnQQqH6j1iih4w6" // Replace with your actual form link
+  target="_blank" // Opens the link in a new tab
+  rel="noopener noreferrer" // Ensures security when opening links in a new tab
+  className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold rounded-md transition-all shadow-md hover:shadow-lg"
+>
+  Become a Sponsor
+</a>
         </motion.div>
       </motion.div>
     </section>
