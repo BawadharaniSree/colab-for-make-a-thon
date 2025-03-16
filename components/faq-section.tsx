@@ -18,19 +18,19 @@ export default function FAQSection() {
   // FAQ items
   const faqs = [
     {
-      question: "Who can participate in MAKE-A-THON 6.0?",
+      question: "Who can participate in MAKE-A-THON 6.0 ?",
       answer:
-        "Any engineering student, regardless of their year of study or department, are eligible to participate, Students from other engineering colleges are most welcome to join...",
+        "Any engineering student, regardless of their year of study or department, are eligible to participate, Students from other engineering colleges are most welcome to join... ",
     },
-   {
-  question: "What are the requirements to participate?",
-  answer:
-    "To participate, you must: <br/> - Register on the website <br/> - Pay the registration fee  <br/> - Submit an abstract for evaluation and get shortlisted",
-}
+    {
+      question: "What are the requirements to participate?",
+      answer:
+        <>"To participate, you must: <br />- Register on the website  <br />- Pay the registration fee  <br />- Submit an abstract for evaluation and get shortlisted"</>,
+    },
     {
       question: "Is there a registration fee?",
       answer:
-        "Yes, there is a nominal registration fee of ₹150 per member.",
+        "Yes, there is a nominal registration fee.",
     },
     {
       question: "What kind of projects can we build?",
@@ -40,18 +40,33 @@ export default function FAQSection() {
     {
       question: "Will there be prizes?",
       answer:
-        "Yes! We have an exciting prize pool worth over $10,000, including cash prizes, tech gadgets, internship opportunities, and cloud credits. There are prizes for the overall winners as well as category-specific awards and special recognition for innovative solutions.",
+        "Yes! Exciting cash prizes, certificates & internship opportunities awaits for the top-performing teams.",
     },
     {
       question: "What resources will be provided during the hackathon?",
-      answer:
-        "We'll provide meals, snacks, and beverages throughout the event. Participants will have access to high-speed internet, power outlets, and dedicated working spaces. We'll also provide API credits from our sponsors, technical workshops, and mentorship from industry experts.",
+      answer:<>"Participants will recieve :  <br />- Participation certificates  <br />- Food and refreshments  <br />- ID/Bands cards for identification  <br />- Workstations with seating arrangements  <br />- WiFi and power sources  <br />- Tech support and mentorship<br/>-Transportation facilities  "</>,
     },
     {
       question: "Can I start working on my project before the hackathon?",
       answer:
-        "No, all coding and design work must be done during the 24-hour hackathon period. However, you can brainstorm ideas, form teams, and research beforehand. We'll be checking projects for pre-existing code to ensure fair competition.",
+        "You can start to brainstorm ideas and prepare, but the actual development must happen during the hackathon to ensure fairness.",
     },
+    {
+      question: "How many members can a team have ?",
+      answer:
+        "Each team must have a minimum of 4 and a maximum of 6 members. ",
+    },
+    {
+      question: "Can a team have members from different colleges ?",
+      answer:
+        "No! Teams cannot have members from different colleges, all members must be part of the same college but can be of various departments/year of study. Each member must complete individual registrations. ",
+    },
+    {
+      question: "When and Where will the Hackathon be conducted ?",
+      answer:
+        "Makeathon 6.0 will commence on 16th April 9am & at 17th April 12pm at the MPH (Multi Purpose Hall) in Sri Venkateswara College of Engineering (SVCE), Sriperumbudur.",
+    },
+    
   ]
 
   return (
