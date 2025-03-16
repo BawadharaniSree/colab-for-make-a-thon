@@ -43,7 +43,7 @@ export default function FAQSection() {
         "Yes! Exciting cash prizes, certificates & internship opportunities awaits for the top-performing teams.",
     },
     {
-      question: "What resources will be provided during the hackathon?",
+      question: "What will be provided during hackathon ?",
       answer:<>"Participants will recieve :  <br />- Participation certificates  <br />- Food and refreshments  <br />- ID/Bands cards for identification  <br />- Workstations with seating arrangements  <br />- WiFi and power sources  <br />- Tech support and mentorship<br/>-Transportation facilities  "</>,
     },
     {
@@ -64,7 +64,7 @@ export default function FAQSection() {
     {
       question: "When and Where will the Hackathon be conducted ?",
       answer:
-        "Makeathon 6.0 will commence on 16th April 9am & at 17th April 12pm at the MPH (Multi Purpose Hall) in Sri Venkateswara College of Engineering (SVCE), Sriperumbudur.",
+        "The Dates are TO BE ANNOUNCED ",
     },
     
   ]
