@@ -106,7 +106,7 @@ export default function FooterSection() {
               <Phone className="h-5 w-5 text-cyan-400 mt-0.5" />
               <span className="text-gray-400">
                     Ramanathan M<br />
-                      Secretary, ECE Association.<br />+91 77086 30410</span>
+                      Secretary, ECEA.<br />+91 77086 30410</span>
               </li>
               <li className="flex items-start gap-3">
               <Phone className="h-5 w-5 text-cyan-400 mt-0.5" />
