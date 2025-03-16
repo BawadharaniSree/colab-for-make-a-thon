@@ -41,8 +41,9 @@ export default function Navbar() {
         scrolled ? "bg-black/80 backdrop-blur-md border-b border-cyan-500/20" : "bg-transparent"
       }`}
     >
-      <a href="https://www.example.com">
+      
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="https://www.example.com">
         <div className="flex items-center gap-2">
           <Terminal className="h-6 w-6 text-cyan-400" />
           <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
