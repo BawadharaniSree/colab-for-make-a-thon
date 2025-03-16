@@ -23,7 +23,7 @@ export default function StayTunedSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,255,0.05)_0%,transparent_70%)] -z-20"></div>
 
       {/* Animated grid background */}
-      <div className="absolute inset-0 opacity-20 -z-30">
+      <div id="staytuned" className="absolute inset-0 opacity-20 -z-30">
         <div className="h-full w-full bg-[linear-gradient(to_right,#8884_1px,transparent_1px),linear-gradient(to_bottom,#8884_1px,transparent_1px)] bg-[size:40px_40px]"></div>
       </div>
 
