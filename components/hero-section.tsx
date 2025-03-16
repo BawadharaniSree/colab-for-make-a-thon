@@ -319,7 +319,7 @@ export default function HeroSection() {
           className="flex flex-col md:flex-row gap-4 justify-center"
         >
           <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white border-none px-8 py-6 text-lg shadow-lg shadow-cyan-500/20">
-          <a href="#timeline" className="cursor-pointer">
+          <a href="#about" className="cursor-pointer">
             Learn More
             </a>
           </Button>
@@ -327,7 +327,7 @@ export default function HeroSection() {
             variant="outline"
             className="border-cyan-500 text-cyan-400 hover:bg-cyan-950 px-8 py-6 text-lg shadow-lg shadow-cyan-500/20"
           >
-            <a href="#schedule" className="cursor-pointer">
+            <a href="#timeline" className="cursor-pointer">
             View Schedule
             </a>
           </Button>
