@@ -34,12 +34,12 @@ export default function FAQSection() {
     {
       question: "Is there a registration fee?",
       answer:
-        "No, participation in MAKE-A-THON 6.0 is completely free! We believe in making technology and innovation accessible to everyone. However, registration is mandatory and spots are limited, so make sure to secure your place early.",
+        "Yes, there is a nominal registration fee of ₹150 per member.",
     },
     {
       question: "What kind of projects can we build?",
       answer:
-        "You can build any project that aligns with our themes: Artificial Intelligence, Cybersecurity, Blockchain, or Internet of Things. Your solution should address a real-world problem and demonstrate technical innovation. You're also welcome to combine multiple themes in your project.",
+        "You are free to build hardware, software or hybrid projects across any domain mentioned in our problem statements. Creativity and innovation are highly encouraged !! ",
     },
     {
       question: "Will there be prizes?",
