@@ -41,6 +41,7 @@ export default function Navbar() {
         scrolled ? "bg-black/80 backdrop-blur-md border-b border-cyan-500/20" : "bg-transparent"
       }`}
     >
+      <a href="https://www.example.com">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Terminal className="h-6 w-6 text-cyan-400" />
@@ -48,6 +49,7 @@ export default function Navbar() {
             Make-a-Thon 6.0
           </span>
         </div>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
