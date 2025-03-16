@@ -26,27 +26,27 @@ export default function AchievementsSection() {
       caption: "Grand Prize Winners - Team Quantum Leap",
     },
     {
-      src: "/intense coding1.JPG?height=600&width=800",
+      src: "/intense_coding1.png?height=600&width=800",
       alt: "Participants working on projects",
       caption: "Intense coding session during the 24-hour hackathon",
     },
     {
-      src: "/intense coding2.JPG?height=600&width=800",
+      src: "/intense_coding2.png?height=600&width=800",
       alt: "Participants working on projects",
       caption: "Intense coding session during the 24-hour hackathon",
     },
     {
-      src: "/JUDGE.JPG?height=600&width=800",
+      src: "/judge.png?height=600&width=800",
       alt: "Project demonstration",
       caption: "Team Blockchain Wizards demonstrating their solution",
     },
     {
-      src: "/CEREMONY WITH INDUSTRY.JPG?height=600&width=800",
+      src: "/ceremony_with_industry.png?height=600&width=800",
       alt: "Award ceremony",
       caption: "Award ceremony with industry sponsors",
     },
     {
-      src: "/mentors.JPG?height=600&width=800",
+      src: "/mentors.png?height=600&width=800",
       alt: "Mentoring session",
       caption: "Expert mentors providing guidance to participants",
     },
