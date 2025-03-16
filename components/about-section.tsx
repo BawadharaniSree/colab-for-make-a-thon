@@ -100,23 +100,23 @@ export default function AboutSection({ scrollYProgress }) {
         >
           <div className="bg-black/70 backdrop-blur-md p-6 rounded-lg border border-cyan-500/30 inline-block">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 inline-block bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              &lt;About Make-a-Thon 6.0/&gt;
+              &lt;About Make-A-Thon 6.0/&gt;
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mb-6"></div>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Make-a-Thon is the flagship event of the Electronics and Communication Engineering department of 
+            Make-A-Thon is the flagship event of the Electronics and Communication Engineering department of 
             Sri Venkateswara College of Engineering. It serves as a platform for the participants to showcase 
             their talents and expertise in project development and deepen their problem-solving skills. After the 
-            successful events of Make-o-thon 1.0,2.0,3.0,4.0 and 5.0 the Electronics and Communication Engineers Association, 
-            The Institution of Electronics and Telecommunication Engineers Student Forum & Robotics and Artificial 
-            Intelligence Club are all set to conduct the “Make-a-Thon 6.0” as an inter-collegiate event. This event 
+            successful events of Make-A-thon 1.0,2.0,3.0,4.0 and 5.0 the Electronics and Communication Engineers Association, 
+            The Institution of Electronics and Telecommunication Engineers - SF & Robotics and Artificial 
+            Intelligence Club are all set to conduct the “Make-A-Thon 6.0” as an inter-collegiate event. This event 
             serves as an opportunity for the students to upskill themselves on recent technologies.
             </p><div className="flex flex-col items-center gap-4 md:gap-8 mt-4 md:mt-8">
   {/* Top Make a Thon 6.0 - Centered */}
   <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
     <img 
       src="/new MAKEATHON LOGO.png" 
-      alt="Make a Thon 6.0" 
+      alt="Make A Thon 6.0" 
       className="h-full rounded-lg border-4 border-white"
     />
   </div>
