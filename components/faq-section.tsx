@@ -20,12 +20,15 @@ export default function FAQSection() {
     {
       question: "Who can participate in MAKE-A-THON 6.0?",
       answer:
-        "MAKE-A-THON 6.0 is open to all university students, recent graduates, and tech enthusiasts. Teams can consist of 2-4 members, and we encourage diversity in skills and backgrounds. Participants from all disciplines are welcome, not just computer science or engineering students.",
+        "Any engineering student, regardless of their year of study or department, are eligible to participate, Students from other engineering colleges are most welcome to join...",
     },
     {
       question: "What are the requirements to participate?",
       answer:
-        "You need a laptop, relevant software tools for your project, and a passion for innovation! All participants must register before the deadline. You should have basic programming knowledge, but we welcome beginners too. Mentors will be available to help teams throughout the event.",
+        "To participate, you must:  
+- Register on the website  
+- Pay the registration fee  
+- Submit an abstract for evaluation and get shortlisted",
     },
     {
       question: "Is there a registration fee?",
