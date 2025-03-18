@@ -2,7 +2,9 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { Cpu, Zap, Code, Braces, Bot, Layers } from "lucide-react"
+import { Cpu, Zap, Code, Bot } from "lucide-react"
+import ScrollingAnnouncement from "./scrolling-announcement"
+import FloatingDate from "./floating-date-badge"
 
 export default function AboutSection({ scrollYProgress }) {
   const ref = useRef(null)
@@ -91,6 +93,35 @@ export default function AboutSection({ scrollYProgress }) {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
+        {/* Event Date Announcement - Added at the top of the content */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mb-8"
+        >
+          <ScrollingAnnouncement
+            eventDate="April 16-17, 2025"
+            eventLocation="Sri Venkateswara College of Engineering"
+            registrationDeadline="April 4 2025"
+          />
+        </motion.div>
+  {/* floating-date - Added at the right end of the website*/}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mb-8"
+        >
+          <FloatingDate
+            eventDate="March 16-17, 2025"
+            eventLocation="Sri Venkateswara College of Engineering"
+            registrationDeadline="stay tuned !!!"
+          />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -104,65 +135,56 @@ export default function AboutSection({ scrollYProgress }) {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mb-6"></div>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Make-A-Thon is the flagship event of the Electronics and Communication Engineering department of 
-            Sri Venkateswara College of Engineering. It serves as a platform for the participants to showcase 
-            their talents and expertise in project development and deepen their problem-solving skills. After the 
-            successful events of Make-A-thon 1.0,2.0,3.0,4.0 and 5.0 the Electronics and Communication Engineers Association, 
-            The Institution of Electronics and Telecommunication Engineers - SF & Robotics and Artificial 
-            Intelligence Club are all set to conduct the “Make-A-Thon 6.0” as an inter-collegiate event. This event 
-            serves as an opportunity for the students to upskill themselves on recent technologies.
-            </p><div className="flex flex-col items-center gap-4 md:gap-8 mt-4 md:mt-8">
-  {/* Top Make a Thon 6.0 - Centered */}
-  <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
-    <img 
-      src="/new MAKEATHON LOGO.png" 
-      alt="Make A Thon 6.0" 
-      className="h-full rounded-lg border-4 border-white"
-    />
-  </div>
+              Make-A-Thon is the flagship event of the Electronics and Communication Engineering department of Sri
+              Venkateswara College of Engineering. It serves as a platform for the participants to showcase their
+              talents and expertise in project development and deepen their problem-solving skills. After the successful
+              events of Make-A-Thon 1.0,2.0,3.0,4.0 and 5.0 the Electronics and Communication Engineers Association, The
+              Institution of Electronics and Telecommunication Engineers - SF & Robotics and Artificial Intelligence
+              Club are all set to conduct the "Make-A-Thon 6.0" as an inter-collegiate event. This event serves as an
+              opportunity for the students to upskill themselves on recent technologies.
+            </p>
+            <div className="flex flex-col items-center gap-4 md:gap-8 mt-4 md:mt-8">
+              {/* Top Make a Thon 6.0 - Centered */}
+              <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+                <img
+                  src="/new MAKEATHON LOGO.png"
+                  alt="Make A Thon 6.0"
+                  className="h-full rounded-lg border-4 border-white"
+                />
+              </div>
 
-  {/* Bottom Row - ECEA, IETE, RAIC */}
-  <div className="grid grid-cols-2 md:flex justify-center items-center gap-4 md:gap-8">
-    {/* ECEA - Left */}
-    <div className="flex justify-end">
-      <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
-        <img 
-          src="/new ECEA logo.png" 
-          alt="ECE Association" 
-          className="h-full rounded-lg border-4 border-white"
-        />
-      </div>
-    </div>
+              {/* Bottom Row - ECEA, IETE, RAIC */}
+              <div className="grid grid-cols-2 md:flex justify-center items-center gap-4 md:gap-8">
+                {/* ECEA - Left */}
+                <div className="flex justify-end">
+                  <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+                    <img
+                      src="/new ECEA logo.png"
+                      alt="ECE Association"
+                      className="h-full rounded-lg border-4 border-white"
+                    />
+                  </div>
+                </div>
 
-    {/* IETE - Center */}
-    <div className="flex justify-center">
-      <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
-        <img 
-          src="/new IETE logo.png" 
-          alt="IETE-SF" 
-          className="h-full rounded-lg border-4 border-white"
-        />
-      </div>
-    </div>
+                {/* IETE - Center */}
+                <div className="flex justify-center">
+                  <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+                    <img src="/new IETE logo.png" alt="IETE-SF" className="h-full rounded-lg border-4 border-white" />
+                  </div>
+                </div>
 
-    {/* Bottom RAIC - Right */}
-    <div className="col-span-2 md:col-auto flex justify-center">
-      <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
-        <img 
-          src="/new RAIC logo.png" 
-          alt="RAIC" 
-          className="h-full rounded-lg border-4 border-white"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-
-
+                {/* Bottom RAIC - Right */}
+                <div className="col-span-2 md:col-auto flex justify-center">
+                  <div className="h-18 md:h-24 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 p-1">
+                    <img src="/new RAIC logo.png" alt="RAIC" className="h-full rounded-lg border-4 border-white" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
 
-        {/* Parallax content */}
+        {/* Rest of the content remains the same */}
         <div className="relative">
           <motion.div style={{ y, opacity }} className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             {/* Left side - Animated text */}
@@ -171,7 +193,8 @@ export default function AboutSection({ scrollYProgress }) {
                 {
                   icon: <Bot className="h-8 w-8 text-purple-400" />,
                   title: "Hardware Innovations",
-                  description: "Explore groundbreaking developments in hardware design, embedded systems, and IoT solutions.",
+                  description:
+                    "Explore groundbreaking developments in hardware design, embedded systems, and IoT solutions.",
                 },
                 {
                   icon: <Cpu className="h-8 w-8 text-cyan-400" />,
@@ -189,7 +212,6 @@ export default function AboutSection({ scrollYProgress }) {
                   title: "Expert Mentorship",
                   description: "Get guidance from industry veterans and tech pioneers throughout the event.",
                 },
-
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -208,7 +230,7 @@ export default function AboutSection({ scrollYProgress }) {
               ))}
             </div>
 
-            {/* Right side - Enhanced animated illustration */}
+            {/* Right side content remains the same */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -216,6 +238,7 @@ export default function AboutSection({ scrollYProgress }) {
               viewport={{ once: true }}
               className="relative h-[500px] flex items-center justify-center"
             >
+              {/* Enhanced animated circuit board background */}
               <div className="relative w-full h-full max-w-md mx-auto">
                 {/* Enhanced animated circuit board background */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -287,15 +310,14 @@ export default function AboutSection({ scrollYProgress }) {
                       }}
                       className="absolute inset-0 flex items-center justify-center"
                     >
-                     <div className="w-32 h-32 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 rounded-lg backdrop-blur-md border border-white/20 shadow-lg shadow-cyan-500/30 flex items-center justify-center">
-                      <img 
-                        src="/ic_chip.png" 
-                        alt="Holographic Element" 
-                        className="w-28 h-28 object-cover rounded-lg"
-                     />
-                     </div>
+                      <div className="w-32 h-32 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 rounded-lg backdrop-blur-md border border-white/20 shadow-lg shadow-cyan-500/30 flex items-center justify-center">
+                        <img
+                          src="/sustainable.png"
+                          alt="Holographic Element"
+                          className="w-28 h-28 object-cover rounded-lg"
+                        />
+                      </div>
                     </motion.div>
-
 
                     {/* Enhanced orbiting elements */}
                     {[0, 1, 2, 3].map((i) => (
@@ -384,13 +406,13 @@ export default function AboutSection({ scrollYProgress }) {
                     }}
                     className="text-xs text-cyan-400 font-mono bg-black/80 p-3 rounded border border-cyan-500/30"
                   >
-                     void setup() &#123;
-                     <br />
-                     &nbsp;&nbsp;Serial.begin(9600);
-                     <br />
-                     &nbsp;&nbsp;initializeHardware();
-                     <br />
-                     &#125;
+                    void setup() &#123;
+                    <br />
+                    &nbsp;&nbsp;Serial.begin(9600);
+                    <br />
+                    &nbsp;&nbsp;initializeHardware();
+                    <br />
+                    &#125;
                   </motion.div>
                 </motion.div>
 
@@ -418,11 +440,11 @@ export default function AboutSection({ scrollYProgress }) {
                     }}
                     className="text-xs text-purple-400 font-mono bg-black/80 p-3 rounded border border-purple-500/30"
                   >
-                        void loop() &#123;
-                        <br />
-                        &nbsp;&nbsp;monitorHardware();
-                        <br />
-                        &nbsp;&#125;
+                    void loop() &#123;
+                    <br />
+                    &nbsp;&nbsp;monitorHardware();
+                    <br />
+                    &nbsp;&#125;
                   </motion.div>
                 </motion.div>
 
@@ -456,53 +478,6 @@ export default function AboutSection({ scrollYProgress }) {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Stats with enhanced styling 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20"
-        >
-          {[
-            { value: "160+", label: "Participants", icon: <Code /> },
-            { value: "24", label: "Hours", icon: <Zap /> },
-            { value: "40+", label: "Teams", icon: <Braces /> },
-            { value: "₹35K", label: "in Prizes", icon: <Layers /> },
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0, 255, 255, 0.3)" }}
-              className="text-center p-6 rounded-lg bg-black/70 backdrop-blur-md border border-cyan-500/30 shadow-lg shadow-cyan-500/10 transition-all duration-300"
-            >
-              <div className="flex justify-center mb-4">
-                <motion.div
-                  animate={{
-                    boxShadow: [
-                      "0 0 5px rgba(0, 255, 255, 0.3)",
-                      "0 0 15px rgba(0, 255, 255, 0.5)",
-                      "0 0 5px rgba(0, 255, 255, 0.3)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Number.POSITIVE_INFINITY,
-                    repeatType: "reverse",
-                    delay: index * 0.5,
-                  }}
-                  className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center"
-                >
-                  {stat.icon}
-                </motion.div>
-              </div>
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                {stat.value}
-              </div>
-              <div className="text-gray-400 text-sm uppercase tracking-wider">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>  */}
       </div>
     </section>
   )

@@ -39,23 +39,17 @@ export default function FooterSection() {
             <div className="flex items-center gap-2 mb-6">
               <Terminal className="h-6 w-6 text-cyan-400" />
               <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                Make-a-Thon 6.0
+                Make-A-Thon 6.0
               </span>
             </div>
             <p className="text-gray-400 mb-6">
             The ultimate innovation-driven hackathon where developers, designers, and tech enthusiasts unite to build groundbreaking hardware and software solutions.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a href="https://www.linkedin.com/in/ecea-svce-2b49062b7?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYprFH8OrRC6A1QCgnttg6Q%3D%3D" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a href="https://www.instagram.com/eceasvce?igsh=eXB1aTR6eWZldGht" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -187,7 +181,7 @@ export default function FooterSection() {
           viewport={{ once: true }}
           className="mt-16 pt-8 border-t border-cyan-500/20 text-center"
         >
-          <p className="text-gray-500 text-sm">© 2025 Make-a-Thon 6.0. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">© 2025 Make-A-Thon 6.0. All rights reserved.</p>
           {/*<div className="flex justify-center gap-4 mt-4 text-xs text-gray-500">
             <a href="#" className="hover:text-cyan-400 transition-colors">
               Privacy Policy
@@ -208,9 +202,49 @@ export default function FooterSection() {
             viewport={{ once: true }}
             className="mt-8 text-lg font-mono"
           >
+
+<span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent flex flex-wrap gap-3 justify-center items-center text-center">
+  <span>Developed by</span>
+  
+  <a
+    href="https://www.linkedin.com/in/akshay-g-5a625a255"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="underline hover:text-cyan-300"
+  >
+    Akshay G,
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/balaji-santhanam-7165102a5"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="underline hover:text-cyan-300"
+  >
+    Balaji S,
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/bawadharani-sree-ramakrishnan-97a638218"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="underline hover:text-cyan-300"
+  >
+    Bawadharani Sree R.
+  </a>
+</span>
+
+
+<br></br>
+
+
             <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               {"<Thank_You_For_Visiting/>"}
             </span>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           </motion.div>
         </motion.div>
       </div>

@@ -1,27 +1,27 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Shield } from "lucide-react"
+import { ArrowLeft, Workflow } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export default function CybersecurityPage() {
+export default function AutomationPage() {
   // Hardware problems
   const hardwareProblems = []
 
   // Software problems
   const softwareProblems = [
     {
-      id: 47,
-      title: "Secure Authentication System for IoT Devices",
+      id: 48,
+      title: "Automated Document Processing System",
       description:
-        "Develop a secure authentication system for IoT devices that protects against unauthorized access and cyber threats.",
-      difficulty: "Hard",
-      tags: ["IoT Security", "Authentication", "Cyber Defense"],
+        "Develop an AI-powered system that can automatically extract, classify, and process information from various document types.",
+      difficulty: "Medium",
+      tags: ["Document Processing", "OCR", "Workflow Automation"],
       sdg: "SDG 9: Industry, Innovation, and Infrastructure",
       fullDescription:
-        "IoT devices often lack robust security measures, making them vulnerable to unauthorized access, data breaches, and exploitation in larger cyberattacks. Traditional authentication methods are either too resource-intensive for constrained IoT devices or too simplistic to provide adequate protection. There is a need for a secure, lightweight authentication system specifically designed for IoT ecosystems. This solution should implement multi-factor authentication, secure key management, and anomaly detection while being optimized for devices with limited computational resources. By enhancing IoT security without compromising performance, this system will protect sensitive data, prevent device hijacking, and strengthen the overall security posture of interconnected systems.",
+        "Manual document processing is time-consuming, error-prone, and inefficient, leading to operational bottlenecks and increased costs for organizations handling large volumes of documents. Traditional OCR solutions often struggle with complex layouts, handwritten text, and varying document formats, requiring significant human intervention. There is a need for an advanced automated document processing system that leverages AI, machine learning, and computer vision to intelligently extract, classify, and process information from diverse document types. This solution should accurately identify document types, extract relevant data fields, validate information, and integrate with existing business systems. By automating document workflows, this system will enhance operational efficiency, reduce processing time, minimize errors, and allow staff to focus on higher-value tasks.",
     },
   ]
 
@@ -52,10 +52,10 @@ export default function CybersecurityPage() {
             className="flex items-center gap-4 mb-6"
           >
             <div className="p-4 bg-black/70 rounded-lg border border-cyan-500/30">
-              <Shield className="h-12 w-12 text-cyan-400" />
+              <Workflow className="h-12 w-12 text-cyan-400" />
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Cybersecurity
+            <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-green-500 bg-clip-text text-transparent">
+              Automation
             </h1>
           </motion.div>
 
@@ -65,9 +65,8 @@ export default function CybersecurityPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-gray-300 max-w-3xl"
           >
-            Explore cybersecurity challenges that focus on protecting digital assets, systems, and networks from
-            threats. These problem statements aim to develop innovative solutions for enhancing security and privacy in
-            the digital world.
+            Explore automation challenges that focus on creating systems that operate with minimal human intervention.
+            These problem statements aim to improve efficiency, accuracy, and productivity through automated solutions.
           </motion.p>
         </div>
 

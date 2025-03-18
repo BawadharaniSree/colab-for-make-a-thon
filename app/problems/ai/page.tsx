@@ -4,41 +4,101 @@ import { motion } from "framer-motion"
 import { ArrowLeft, Brain } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function AIProblemsPage() {
-  // Sample AI problem statements
-  const problems = [
-    {
-      id: 1,
-      title: "AI-Powered Healthcare Assistant",
-      description:
-        "Design an AI system that can assist healthcare professionals in diagnosing common illnesses based on symptoms and patient history.",
-      difficulty: "Hard",
-      tags: ["Healthcare", "Machine Learning", "NLP"],
-    },
-    {
-      id: 2,
-      title: "Smart Content Recommendation Engine",
-      description:
-        "Build a recommendation system that suggests personalized content to users based on their preferences and behavior patterns.",
-      difficulty: "Medium",
-      tags: ["Recommendation Systems", "Data Analysis", "User Experience"],
-    },
+  // Hardware problems
+  const hardwareProblems = []
+
+  // Software problems
+  const softwareProblems = [
     {
       id: 3,
-      title: "Automated Code Review Assistant",
+      title: "Personalized E-Learning Platform",
       description:
-        "Create an AI tool that can analyze code submissions, identify potential bugs, and suggest improvements for better code quality.",
-      difficulty: "Hard",
-      tags: ["Code Analysis", "Machine Learning", "Developer Tools"],
+        "Develop an AI-driven platform that adapts educational content to individual learning styles and paces, enhancing student engagement and comprehension.",
+      difficulty: "Medium",
+      tags: ["Education", "Machine Learning", "Personalization"],
+      sdg: "SDG 9: Industry, Innovation, and Infrastructure",
+      fullDescription:
+        "Traditional e-learning platforms follow a one-size-fits-all approach, which often fails to cater to the diverse learning styles, paces, and needs of individual students. This lack of personalization leads to disengagement, ineffective learning, and knowledge gaps. Additionally, students struggle with varying levels of comprehension, requiring tailored support to optimize their learning experience. To address these challenges, an AI-driven personalized e-learning platform is needed to dynamically adapt content, provide real-time feedback, and offer customized learning pathways. This solution will enhance student engagement, improve comprehension, and ensure an effective, learner-centric educational experience.",
     },
     {
-      id: 4,
-      title: "Emotion Recognition System",
+      id: 13,
+      title: "AI-Enabled Real-Time Speech Enhancement",
       description:
-        "Develop a system that can detect and analyze human emotions from facial expressions, voice patterns, or text inputs.",
+        "Develop an Edge AI solution for enhancing speech quality on low-cost audio devices with noise reduction and clarity enhancement.",
+      difficulty: "Hard",
+      tags: ["Edge AI", "Audio Processing", "Speech Recognition"],
+      sdg: "SDG 9: Industry, Innovation, and Infrastructure",
+      fullDescription:
+        "Develop an Edge AI solution for enhancing speech quality on low-cost audio devices. The system must reduce background noise, enhance clarity, and perform speaker separation efficiently on embedded platforms like Raspberry Pi or ESP32.",
+    },
+    {
+      id: 20,
+      title: "AI-Based Defective Exhibit Identification System",
+      description:
+        "Create a system that automatically detects and identifies defective items or exhibits in manufacturing units and quality inspection areas.",
       difficulty: "Medium",
-      tags: ["Computer Vision", "Sentiment Analysis", "Human-Computer Interaction"],
+      tags: ["Computer Vision", "Quality Control", "Manufacturing"],
+      sdg: "Uncategorized",
+      fullDescription:
+        "The AI-Based Defective Exhibit Identification System aims to automatically detect and identify defective items or exhibits in various settings, such as manufacturing units, quality inspection areas, or exhibitions. Using advanced computer vision and AI algorithms, the system will analyze images or video feeds in real-time to spot defects, damages, or irregularities in products or displays. This solution will help reduce human error, speed up the inspection process, and ensure higher accuracy in identifying defects. By providing instant feedback and reports, the system can improve quality control, reduce operational costs, and enhance overall efficiency. It can be integrated into existing workflows and customized for different industries, ensuring versatility and ease of adoption.",
+    },
+    {
+      id: 29,
+      title: "Automated AI/ML System for Detecting Online Fraud",
+      description:
+        "Create an AI/ML-based system that can autonomously analyze and categorize online content, distinguishing between authentic and fake/fraudulent websites.",
+      difficulty: "Hard",
+      tags: ["Fraud Detection", "NLP", "Web Security"],
+      sdg: "SDG 9: Industry, Innovation, and Infrastructure",
+      fullDescription:
+        "Create and implement an AI/ML-based system that can autonomously analyze and categorize online content, distinguishing between authentic and fake/fraudulent websites, advertisements, and customer care numbers. The system aims to achieve the following: Website Authentication: Develop algorithms to assess the legitimacy of websites based on domain, SSL certificates, and other authentication indicators. Ad Content Analysis: Implement NLP and image recognition techniques to evaluate the authenticity and accuracy of ad content. Customer Care Number Verification: Establish a database of verified customer care numbers and compare incoming numbers to identify potential scams. Real-time Detection: Enable real-time analysis of online content to prevent users from accessing fake or malicious websites. User Feedback Integration: Incorporate mechanisms for user feedback to enhance the system's accuracy and adapt to evolving fraudulent tactics.",
+    },
+    {
+      id: 31,
+      title: "Federated Learning Framework for Healthcare",
+      description:
+        "Develop a federated learning framework that enables hospitals to collaboratively train AI models on patient data without sharing sensitive information.",
+      difficulty: "Hard",
+      tags: ["Healthcare", "Privacy", "Machine Learning"],
+      sdg: "SDG 9: Industry, Innovation, and Infrastructure",
+      fullDescription:
+        "Develop a federated learning framework that enables hospitals to collaboratively train AI models on patient data without sharing sensitive information. The system should use advanced privacy-preserving techniques to ensure data security and comply with regulations like HIPAA. By aggregating insights from multiple hospitals, the framework will provide accurate predictions and valuable insights for disease diagnosis and treatment, ultimately improving patient outcomes while maintaining trust and data confidentiality.",
+    },
+    {
+      id: 32,
+      title: "AI-powered Financial Advisor for Rural India",
+      description:
+        "Create an AI-powered financial empowerment platform designed specifically for rural women with personalized financial education in local languages.",
+      difficulty: "Medium",
+      tags: ["Financial Inclusion", "Rural Development", "NLP"],
+      sdg: "SDG 9: Industry, Innovation, and Infrastructure",
+      fullDescription:
+        "Scenario: Lakshmi, a widow and mother of two in a remote village in Odisha, has always dreamed of starting a small dairy business to secure a better future for her children. However, she lacks formal education and is intimidated by the complexities of financial products. Without access to financial literacy resources or tailored banking services, Lakshmi struggles to navigate the financial landscape and fears making decisions that could jeopardize her family's future. Student's Challenge: Create an AI-powered financial empowerment platform designed specifically for rural women like Lakshmi. The platform should provide AI-driven personalized financial education, accessible in local languages, and tailored to varying levels of literacy. It should also offer micro-investment opportunities, AI-powered budgeting tools, and secure, easy-to-understand banking options. Additionally, the solution could include AI-driven mentorship and community support features that connect users with successful female entrepreneurs and financial advisors, fostering a culture of financial independence and confidence.",
+    },
+    {
+      id: 44,
+      title: "AI-Based Sign Language to Speech & Text Converter",
+      description:
+        "Develop a real-time AI-based sign language recognition system that converts sign gestures into speech and text using computer vision.",
+      difficulty: "Hard",
+      tags: ["Accessibility", "Computer Vision", "NLP"],
+      sdg: "SDG 10: Reduced Inequalities",
+      fullDescription:
+        "Millions of people with speech and hearing impairments face communication barriers daily, limiting their ability to interact seamlessly in public and professional spaces. Existing solutions for sign language recognition are either expensive, slow, or inaccurate. There is a need for a real-time AI-based sign language recognition system that can convert sign gestures into speech and text using computer vision and deep learning algorithms. The system will work on mobile devices and AR glasses, enabling seamless interaction between the hearing-impaired and non-sign language users in daily life, workplaces, and public services.",
+    },
+    {
+      id: 45,
+      title: "AI-Powered Resume Analyzer for Job Seekers",
+      description:
+        "Create an AI-based web application that helps job seekers optimize their resumes by analyzing structure, content, and keyword relevance.",
+      difficulty: "Medium",
+      tags: ["Career Development", "NLP", "Web Application"],
+      sdg: "SDG 8: Decent Work and Economic Growth",
+      fullDescription:
+        "Create an AI-based web application that helps job seekers optimize their resumes by analyzing structure, content, and keyword relevance based on job descriptions. The system should provide personalized recommendations for improvements, highlight missing skills, and ensure ATS (Applicant Tracking System) compatibility. Additionally, it should suggest industry-specific templates for better visibility.",
     },
   ]
 
@@ -82,50 +142,133 @@ export default function AIProblemsPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-gray-300 max-w-3xl"
           >
-            Explore these AI problem statements and harness the power of artificial intelligence to create innovative
-            solutions that can transform industries and improve lives.
+            Explore cutting-edge AI problem statements and harness the power of artificial intelligence to create
+            innovative solutions that can transform industries and improve lives.
           </motion.p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          {problems.map((problem, index) => (
-            <motion.div
-              key={problem.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="p-6 bg-black/50 backdrop-blur-md border border-cyan-500/30 rounded-lg hover:border-cyan-500/50 transition-all shadow-lg shadow-cyan-500/10"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <h2 className="text-xl font-bold text-white">{problem.title}</h2>
-                <span
-                  className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    problem.difficulty === "Hard"
-                      ? "bg-red-500/20 text-red-300"
-                      : problem.difficulty === "Medium"
-                        ? "bg-yellow-500/20 text-yellow-300"
-                        : "bg-green-500/20 text-green-300"
-                  }`}
-                >
-                  {problem.difficulty}
-                </span>
-              </div>
+        <Tabs defaultValue="software" className="w-full">
+          <TabsList className="grid w-full max-w-md grid-cols-2 mb-8">
+            <TabsTrigger value="hardware" className="data-[state=active]:bg-cyan-900/50">
+              Hardware Solutions
+            </TabsTrigger>
+            <TabsTrigger value="software" className="data-[state=active]:bg-cyan-900/50">
+              Software Solutions
+            </TabsTrigger>
+          </TabsList>
 
-              <p className="text-gray-300 mb-4">{problem.description}</p>
-
-              <div className="flex flex-wrap gap-2">
-                {problem.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-2 py-1 bg-cyan-900/30 border border-cyan-500/30 rounded-md text-xs text-cyan-300"
+          <TabsContent value="hardware" className="mt-0">
+            {hardwareProblems.length > 0 ? (
+              <div className="grid gap-6 md:grid-cols-2">
+                {hardwareProblems.map((problem, index) => (
+                  <motion.div
+                    key={problem.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 * index }}
+                    className="p-6 bg-black/50 backdrop-blur-md border border-cyan-500/30 rounded-lg hover:border-cyan-500/50 transition-all shadow-lg shadow-cyan-500/10"
                   >
-                    {tag}
-                  </span>
+                    <div className="flex justify-between items-start mb-4">
+                      <h2 className="text-xl font-bold text-white">{problem.title}</h2>
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          problem.difficulty === "Hard"
+                            ? "bg-red-500/20 text-red-300"
+                            : problem.difficulty === "Medium"
+                              ? "bg-yellow-500/20 text-yellow-300"
+                              : "bg-green-500/20 text-green-300"
+                        }`}
+                      >
+                        {problem.difficulty}
+                      </span>
+                    </div>
+
+                    <p className="text-gray-300 mb-4">{problem.description}</p>
+
+                    <div className="mb-4">
+                      <h3 className="text-sm font-semibold text-cyan-400 mb-2">Problem Statement:</h3>
+                      <p className="text-gray-300 text-sm">{problem.fullDescription}</p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {problem.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-1 bg-cyan-900/30 border border-cyan-500/30 rounded-md text-xs text-cyan-300"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {problem.sdg && (
+                      <div className="mt-3 pt-3 border-t border-cyan-500/20">
+                        <span className="text-xs text-cyan-300">{problem.sdg}</span>
+                      </div>
+                    )}
+                  </motion.div>
                 ))}
               </div>
-            </motion.div>
-          ))}
-        </div>
+            ) : (
+              <div className="p-8 text-center">
+                <p className="text-gray-400">No hardware problems available in this category.</p>
+              </div>
+            )}
+          </TabsContent>
+
+          <TabsContent value="software" className="mt-0">
+            <div className="grid gap-6 md:grid-cols-2">
+              {softwareProblems.map((problem, index) => (
+                <motion.div
+                  key={problem.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 * index }}
+                  className="p-6 bg-black/50 backdrop-blur-md border border-cyan-500/30 rounded-lg hover:border-cyan-500/50 transition-all shadow-lg shadow-cyan-500/10"
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <h2 className="text-xl font-bold text-white">{problem.title}</h2>
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                        problem.difficulty === "Hard"
+                          ? "bg-red-500/20 text-red-300"
+                          : problem.difficulty === "Medium"
+                            ? "bg-yellow-500/20 text-yellow-300"
+                            : "bg-green-500/20 text-green-300"
+                      }`}
+                    >
+                      {problem.difficulty}
+                    </span>
+                  </div>
+
+                  <p className="text-gray-300 mb-4">{problem.description}</p>
+
+                  <div className="mb-4">
+                    <h3 className="text-sm font-semibold text-cyan-400 mb-2">Problem Statement:</h3>
+                    <p className="text-gray-300 text-sm">{problem.fullDescription}</p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {problem.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 bg-cyan-900/30 border border-cyan-500/30 rounded-md text-xs text-cyan-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {problem.sdg && (
+                    <div className="mt-3 pt-3 border-t border-cyan-500/20">
+                      <span className="text-xs text-cyan-300">{problem.sdg}</span>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   )

@@ -47,7 +47,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <Terminal className="h-6 w-6 text-cyan-400" />
           <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            Make-a-Thon 6.0
+            Make-A-Thon 6.0
           </span>
         </div>
         </a>

@@ -1,27 +1,27 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Shield } from "lucide-react"
+import { ArrowLeft, Smartphone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export default function CybersecurityPage() {
+export default function ApplicationDevelopmentPage() {
   // Hardware problems
   const hardwareProblems = []
 
   // Software problems
   const softwareProblems = [
     {
-      id: 47,
-      title: "Secure Authentication System for IoT Devices",
+      id: 2,
+      title: "Enhancing Car Sharing Accessibility in Urban Areas",
       description:
-        "Develop a secure authentication system for IoT devices that protects against unauthorized access and cyber threats.",
-      difficulty: "Hard",
-      tags: ["IoT Security", "Authentication", "Cyber Defense"],
+        "Develop a user-centric solution to make car-sharing more accessible and convenient for urban commuters.",
+      difficulty: "Medium",
+      tags: ["Urban Mobility", "Sharing Economy", "User Experience"],
       sdg: "SDG 9: Industry, Innovation, and Infrastructure",
       fullDescription:
-        "IoT devices often lack robust security measures, making them vulnerable to unauthorized access, data breaches, and exploitation in larger cyberattacks. Traditional authentication methods are either too resource-intensive for constrained IoT devices or too simplistic to provide adequate protection. There is a need for a secure, lightweight authentication system specifically designed for IoT ecosystems. This solution should implement multi-factor authentication, secure key management, and anomaly detection while being optimized for devices with limited computational resources. By enhancing IoT security without compromising performance, this system will protect sensitive data, prevent device hijacking, and strengthen the overall security posture of interconnected systems.",
+        "Urban commuters face significant challenges in accessing convenient and reliable car-sharing services due to limited vehicle availability, complex booking systems, and concerns about trust and security. These barriers discourage adoption, leading to continued reliance on personal vehicles, contributing to traffic congestion, parking shortages, and environmental pollution. Additionally, inefficient use of urban parking spaces further exacerbates these issues. There is a need for a user-centric solution that simplifies car-sharing access, enhances user trust, and integrates a shared parking feature, allowing individuals to rent out unused parking spots. This approach will optimize urban mobility, reduce congestion, and promote sustainable transportation solutions.",
     },
   ]
 
@@ -52,10 +52,10 @@ export default function CybersecurityPage() {
             className="flex items-center gap-4 mb-6"
           >
             <div className="p-4 bg-black/70 rounded-lg border border-cyan-500/30">
-              <Shield className="h-12 w-12 text-cyan-400" />
+              <Smartphone className="h-12 w-12 text-cyan-400" />
             </div>
             <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Cybersecurity
+              Application Development
             </h1>
           </motion.div>
 
@@ -65,9 +65,9 @@ export default function CybersecurityPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-gray-300 max-w-3xl"
           >
-            Explore cybersecurity challenges that focus on protecting digital assets, systems, and networks from
-            threats. These problem statements aim to develop innovative solutions for enhancing security and privacy in
-            the digital world.
+            Explore innovative application development challenges that focus on creating user-centric solutions to
+            real-world problems. These problem statements aim to leverage technology to improve accessibility,
+            efficiency, and user experience.
           </motion.p>
         </div>
 

@@ -1,27 +1,26 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Shield } from "lucide-react"
+import { ArrowLeft, ImageIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export default function CybersecurityPage() {
+export default function ImageProcessingPage() {
   // Hardware problems
   const hardwareProblems = []
 
   // Software problems
   const softwareProblems = [
     {
-      id: 47,
-      title: "Secure Authentication System for IoT Devices",
-      description:
-        "Develop a secure authentication system for IoT devices that protects against unauthorized access and cyber threats.",
+      id: 51,
+      title: "Advanced Image Enhancement for Medical Diagnostics",
+      description: "Develop an image processing system that enhances medical images for improved diagnostic accuracy.",
       difficulty: "Hard",
-      tags: ["IoT Security", "Authentication", "Cyber Defense"],
-      sdg: "SDG 9: Industry, Innovation, and Infrastructure",
+      tags: ["Medical Imaging", "Computer Vision", "Healthcare"],
+      sdg: "SDG 3: Good Health and Well-being",
       fullDescription:
-        "IoT devices often lack robust security measures, making them vulnerable to unauthorized access, data breaches, and exploitation in larger cyberattacks. Traditional authentication methods are either too resource-intensive for constrained IoT devices or too simplistic to provide adequate protection. There is a need for a secure, lightweight authentication system specifically designed for IoT ecosystems. This solution should implement multi-factor authentication, secure key management, and anomaly detection while being optimized for devices with limited computational resources. By enhancing IoT security without compromising performance, this system will protect sensitive data, prevent device hijacking, and strengthen the overall security posture of interconnected systems.",
+        "Medical imaging plays a crucial role in diagnosis, but image quality can be compromised by various factors such as noise, poor contrast, or artifacts. These issues can lead to misdiagnosis, delayed treatment, or unnecessary follow-up procedures. Traditional image enhancement techniques often struggle with the complexity and diversity of medical images across different modalities (X-ray, MRI, CT, ultrasound). There is a need for an advanced image processing system specifically designed for medical diagnostics that can intelligently enhance images while preserving critical diagnostic information. This solution should improve clarity, contrast, and detail visibility in medical images, enabling healthcare professionals to make more accurate diagnoses. By leveraging computer vision and machine learning techniques, the system should adapt to different imaging modalities and specific diagnostic requirements.",
     },
   ]
 
@@ -52,10 +51,10 @@ export default function CybersecurityPage() {
             className="flex items-center gap-4 mb-6"
           >
             <div className="p-4 bg-black/70 rounded-lg border border-cyan-500/30">
-              <Shield className="h-12 w-12 text-cyan-400" />
+              <ImageIcon className="h-12 w-12 text-cyan-400" />
             </div>
             <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Cybersecurity
+              Image Processing
             </h1>
           </motion.div>
 
@@ -65,9 +64,9 @@ export default function CybersecurityPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-gray-300 max-w-3xl"
           >
-            Explore cybersecurity challenges that focus on protecting digital assets, systems, and networks from
-            threats. These problem statements aim to develop innovative solutions for enhancing security and privacy in
-            the digital world.
+            Explore image processing challenges that focus on analyzing and manipulating visual data. These problem
+            statements aim to develop innovative solutions for enhancing, analyzing, and extracting information from
+            images for various applications.
           </motion.p>
         </div>
 

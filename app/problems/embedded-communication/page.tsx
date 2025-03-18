@@ -1,29 +1,29 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Shield } from "lucide-react"
+import { ArrowLeft, Radio } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-export default function CybersecurityPage() {
+export default function EmbeddedCommunicationPage() {
   // Hardware problems
-  const hardwareProblems = []
-
-  // Software problems
-  const softwareProblems = [
+  const hardwareProblems = [
     {
-      id: 47,
-      title: "Secure Authentication System for IoT Devices",
+      id: 50,
+      title: "Low-Power Wide-Area Network for Rural IoT Applications",
       description:
-        "Develop a secure authentication system for IoT devices that protects against unauthorized access and cyber threats.",
+        "Develop a low-power, long-range communication network solution for IoT devices in rural and remote areas.",
       difficulty: "Hard",
-      tags: ["IoT Security", "Authentication", "Cyber Defense"],
+      tags: ["LPWAN", "Rural Connectivity", "IoT Communication"],
       sdg: "SDG 9: Industry, Innovation, and Infrastructure",
       fullDescription:
-        "IoT devices often lack robust security measures, making them vulnerable to unauthorized access, data breaches, and exploitation in larger cyberattacks. Traditional authentication methods are either too resource-intensive for constrained IoT devices or too simplistic to provide adequate protection. There is a need for a secure, lightweight authentication system specifically designed for IoT ecosystems. This solution should implement multi-factor authentication, secure key management, and anomaly detection while being optimized for devices with limited computational resources. By enhancing IoT security without compromising performance, this system will protect sensitive data, prevent device hijacking, and strengthen the overall security posture of interconnected systems.",
+        "Rural and remote areas often lack reliable communication infrastructure, limiting the deployment of IoT solutions for agriculture, environmental monitoring, and community services. Traditional cellular networks have limited coverage in these regions, while conventional IoT communication protocols may not provide sufficient range or power efficiency for widespread deployment. There is a need for a specialized Low-Power Wide-Area Network (LPWAN) solution that can enable IoT connectivity across vast rural landscapes with minimal power consumption. This system should support long-range transmission (10+ km), operate for years on battery power, and provide reliable data transfer even in challenging environmental conditions. By extending IoT capabilities to underserved areas, this solution will enable smart agriculture, environmental monitoring, and improved public services in rural communities.",
     },
   ]
+
+  // Software problems
+  const softwareProblems = []
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -52,10 +52,10 @@ export default function CybersecurityPage() {
             className="flex items-center gap-4 mb-6"
           >
             <div className="p-4 bg-black/70 rounded-lg border border-cyan-500/30">
-              <Shield className="h-12 w-12 text-cyan-400" />
+              <Radio className="h-12 w-12 text-cyan-400" />
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Cybersecurity
+            <h1 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-green-500 bg-clip-text text-transparent">
+              Embedded & Communication
             </h1>
           </motion.div>
 
@@ -65,13 +65,12 @@ export default function CybersecurityPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-gray-300 max-w-3xl"
           >
-            Explore cybersecurity challenges that focus on protecting digital assets, systems, and networks from
-            threats. These problem statements aim to develop innovative solutions for enhancing security and privacy in
-            the digital world.
+            Explore challenges that combine embedded systems with communication technologies. These problem statements
+            focus on creating connected devices and systems that can communicate effectively in various environments.
           </motion.p>
         </div>
 
-        <Tabs defaultValue="software" className="w-full">
+        <Tabs defaultValue="hardware" className="w-full">
           <TabsList className="grid w-full max-w-md grid-cols-2 mb-8">
             <TabsTrigger value="hardware" className="data-[state=active]:bg-cyan-900/50">
               Hardware Solutions
@@ -82,9 +81,62 @@ export default function CybersecurityPage() {
           </TabsList>
 
           <TabsContent value="hardware" className="mt-0">
-            {hardwareProblems.length > 0 ? (
+            <div className="grid gap-6 md:grid-cols-2">
+              {hardwareProblems.map((problem, index) => (
+                <motion.div
+                  key={problem.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 * index }}
+                  className="p-6 bg-black/50 backdrop-blur-md border border-cyan-500/30 rounded-lg hover:border-cyan-500/50 transition-all shadow-lg shadow-cyan-500/10"
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <h2 className="text-xl font-bold text-white">{problem.title}</h2>
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-medium ${
+                        problem.difficulty === "Hard"
+                          ? "bg-red-500/20 text-red-300"
+                          : problem.difficulty === "Medium"
+                            ? "bg-yellow-500/20 text-yellow-300"
+                            : "bg-green-500/20 text-green-300"
+                      }`}
+                    >
+                      {problem.difficulty}
+                    </span>
+                  </div>
+
+                  <p className="text-gray-300 mb-4">{problem.description}</p>
+
+                  <div className="mb-4">
+                    <h3 className="text-sm font-semibold text-cyan-400 mb-2">Problem Statement:</h3>
+                    <p className="text-gray-300 text-sm">{problem.fullDescription}</p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {problem.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 bg-cyan-900/30 border border-cyan-500/30 rounded-md text-xs text-cyan-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {problem.sdg && (
+                    <div className="mt-3 pt-3 border-t border-cyan-500/20">
+                      <span className="text-xs text-cyan-300">{problem.sdg}</span>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="software" className="mt-0">
+            {softwareProblems.length > 0 ? (
               <div className="grid gap-6 md:grid-cols-2">
-                {hardwareProblems.map((problem, index) => (
+                {softwareProblems.map((problem, index) => (
                   <motion.div
                     key={problem.id}
                     initial={{ opacity: 0, y: 20 }}
@@ -135,62 +187,9 @@ export default function CybersecurityPage() {
               </div>
             ) : (
               <div className="p-8 text-center">
-                <p className="text-gray-400">No hardware problems available in this category.</p>
+                <p className="text-gray-400">No software problems available in this category.</p>
               </div>
             )}
-          </TabsContent>
-
-          <TabsContent value="software" className="mt-0">
-            <div className="grid gap-6 md:grid-cols-2">
-              {softwareProblems.map((problem, index) => (
-                <motion.div
-                  key={problem.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
-                  className="p-6 bg-black/50 backdrop-blur-md border border-cyan-500/30 rounded-lg hover:border-cyan-500/50 transition-all shadow-lg shadow-cyan-500/10"
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <h2 className="text-xl font-bold text-white">{problem.title}</h2>
-                    <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        problem.difficulty === "Hard"
-                          ? "bg-red-500/20 text-red-300"
-                          : problem.difficulty === "Medium"
-                            ? "bg-yellow-500/20 text-yellow-300"
-                            : "bg-green-500/20 text-green-300"
-                      }`}
-                    >
-                      {problem.difficulty}
-                    </span>
-                  </div>
-
-                  <p className="text-gray-300 mb-4">{problem.description}</p>
-
-                  <div className="mb-4">
-                    <h3 className="text-sm font-semibold text-cyan-400 mb-2">Problem Statement:</h3>
-                    <p className="text-gray-300 text-sm">{problem.fullDescription}</p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {problem.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-2 py-1 bg-cyan-900/30 border border-cyan-500/30 rounded-md text-xs text-cyan-300"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {problem.sdg && (
-                    <div className="mt-3 pt-3 border-t border-cyan-500/20">
-                      <span className="text-xs text-cyan-300">{problem.sdg}</span>
-                    </div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
           </TabsContent>
         </Tabs>
       </div>

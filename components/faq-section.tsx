@@ -64,7 +64,7 @@ export default function FAQSection() {
     {
       question: "When and Where will the Hackathon be conducted ?",
       answer:
-        "The Dates are TO BE ANNOUNCED ",
+        "Makeathon 6.0 will commence on 16th April 9am & at 17th April 12pm at the MPH (Multi Purpose Hall) in Sri Venkateswara College of Engineering (SVCE), Sriperumbudur.",
     },
     
   ]

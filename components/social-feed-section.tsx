@@ -11,52 +11,52 @@ import Image from "next/image"
 const instagramFeed = [
   {
     id: 1,
-    image: "/placeholder.svg?height=600&width=600",
+    image: "/coming soon.jpeg?height=600&width=600",
     caption:
       "Excited to announce MAKE-A-THON 6.0! Mark your calendars for March 15-17, 2025. Registration opens next week! #MakeAThon6 #Hackathon #TechInnovation",
     likes: 245,
     user: {
       name: "makeathon",
-      avatar: "/placeholder.svg?height=50&width=50",
+      avatar: "/coming soon.jpeg?height=50&width=50",
     },
     link: "https://www.instagram.com/p/example1/",
     postedAt: "2 days ago",
   },
   {
     id: 2,
-    image: "/placeholder.svg?height=600&width=600",
+    image: "/coming soon.jpeg?height=600&width=600",
     caption:
-      "Meet our amazing sponsors for MAKE-A-THON 6.0! Thanks to @techcorp, @devstudio, and @aiinnovate for supporting the next generation of innovators. #MakeAThon6 #TechSponsors",
+      "Meet our amazing sponsors for MAKE-A-THON 6.0! #MakeAThon6 #TechSponsors",
     likes: 189,
     user: {
       name: "makeathon",
-      avatar: "/placeholder.svg?height=50&width=50",
+      avatar: "/coming soon.jpeg?height=50&width=50",
     },
     link: "https://www.instagram.com/p/example2/",
     postedAt: "5 days ago",
   },
   {
     id: 3,
-    image: "/placeholder.svg?height=600&width=600",
+    image: "/coming soon.jpeg?height=600&width=600",
     caption:
       "Throwback to last year's winning team! Their AI-powered healthcare solution is now being developed with @healthtech. Could your idea be next? #MakeAThon6 #Innovation #AIForGood",
     likes: 312,
     user: {
       name: "makeathon",
-      avatar: "/placeholder.svg?height=50&width=50",
+      avatar: "/coming soon.jpeg?height=50&width=50",
     },
     link: "https://www.instagram.com/p/example3/",
     postedAt: "1 week ago",
   },
   {
     id: 4,
-    image: "/placeholder.svg?height=600&width=600",
+    image: "/coming soon.jpeg?height=600&width=600",
     caption:
-      "New venue reveal! MAKE-A-THON 6.0 will be held at the stunning TechHub Convention Center. State-of-the-art facilities await you! #MakeAThon6 #TechHub #HackathonVenue",
+      "New venue reveal! MAKE-A-THON 6.0 will be held at the stunning MPH (Multi-Purpose Hall). State-of-the-art facilities await you! #MakeAThon6 #TechHub #HackathonVenue",
     likes: 276,
     user: {
       name: "makeathon",
-      avatar: "/placeholder.svg?height=50&width=50",
+      avatar: "/coming soon.jpeg?height=50&width=50",
     },
     link: "https://www.instagram.com/p/example4/",
     postedAt: "2 weeks ago",
@@ -69,7 +69,7 @@ const chatFeed = [
     user: {
       name: "Moderator",
       role: "Admin",
-      avatar: "/placeholder.svg?height=50&width=50",
+      avatar: "/coming soon.jpeg?height=50&width=50",
     },
     content:
       "Welcome to the official Make-a-Thon 6.0 Chat! Please check the #rules channel for guidelines and #resources for helpful links.",
@@ -81,7 +81,7 @@ const chatFeed = [
     user: {
       name: "DevNinja",
       role: "Participant",
-      avatar: "/placeholder.svg?height=50&width=50",
+      avatar: "/coming soon.jpeg?height=50&width=50",
     },
     content: "Anyone else having trouble with the WiFi in the east wing? Signal keeps dropping.",
     time: "22m ago",
@@ -92,7 +92,7 @@ const chatFeed = [
     user: {
       name: "AIExpert",
       role: "Mentor",
-      avatar: "/placeholder.svg?height=50&width=50",
+      avatar: "/coming soon.jpeg?height=50&width=50",
     },
     content: "I'll be hosting a workshop on GPT integration at 6 PM in Room 204. Bring your laptops!",
     time: "30m ago",
@@ -103,7 +103,7 @@ const chatFeed = [
     user: {
       name: "CoffeeCode",
       role: "Participant",
-      avatar: "/placeholder.svg?height=50&width=50",
+      avatar: "/coming soon.jpeg?height=50&width=50",
     },
     content: "Our team is looking for someone with blockchain experience. We're at table 17 if anyone wants to join!",
     time: "45m ago",
@@ -275,7 +275,7 @@ function InstagramCarousel({ posts }) {
                 <div className="flex flex-col md:flex-row gap-4 p-4 border border-cyan-500/10 rounded-lg bg-black/30 hover:bg-black/50 transition-all">
                   <div className="relative w-full md:w-48 h-48 flex-shrink-0">
                     <Image
-                      src={post.image || "/placeholder.svg"}
+                      src={post.image || "/coming soon.jpeg"}
                       alt="Instagram post"
                       fill
                       className="object-cover rounded-md"
@@ -284,7 +284,7 @@ function InstagramCarousel({ posts }) {
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-3">
                       <Image
-                        src={post.user.avatar || "/placeholder.svg"}
+                        src={post.user.avatar || "/coming soon.jpeg"}
                         alt={post.user.name}
                         width={24}
                         height={24}
@@ -443,7 +443,7 @@ export default function SocialFeedSection() {
                     >
                       <div className="flex gap-3">
                         <img
-                          src={message.user.avatar || "/placeholder.svg"}
+                          src={message.user.avatar || "/coming soon.jpeg"}
                           alt={message.user.name}
                           className="w-10 h-10 rounded-full"
                         />
