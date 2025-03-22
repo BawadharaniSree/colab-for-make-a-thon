@@ -14,7 +14,7 @@ import {
   Stars,
 } from "@react-three/drei"
 import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Download } from "lucide-react"
 
 // Digital Grid Floor
 function DigitalGrid() {
@@ -331,6 +331,19 @@ export default function HeroSection() {
             View Schedule
             </a>
           </Button>
+                 {/* Second Row - Download Problem Statement */}
+            <div className="w-full text-center mt-4" data-parallax="0.3">
+              <a
+                href="/problem-statement.pdf" // Update with the correct file path
+                download="Problem_Statement.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
+                  Download Problem Statement <Download className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
+            </div>
         </motion.div>
 
         </div>
