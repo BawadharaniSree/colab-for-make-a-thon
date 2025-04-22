@@ -161,7 +161,7 @@ export default function TimelineSection() {
           className="flex justify-center mt-12"
         >
 
-{/* 
+
 
           <Link href="/top-teams">
             <Button className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white border-none shadow-lg shadow-purple-500/20 group px-6 py-3 text-lg">
@@ -170,7 +170,7 @@ export default function TimelineSection() {
             </Button>
           </Link>
 
-           */}
+          
 
         </motion.div>
 
